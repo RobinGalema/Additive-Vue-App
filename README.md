@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### Install router package
+```
+npm install vue-router@next
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
