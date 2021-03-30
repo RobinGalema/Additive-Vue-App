@@ -9,12 +9,14 @@
 export default {
   name: 'App',
   components: {
-    
+
   }
 }
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 <style>
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
