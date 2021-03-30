@@ -2,14 +2,16 @@
   <router-view>
 
   </router-view>
+  <Navigation />
 </template>
 
 <script>
 
+import Navigation from "@/components/Global/Navigation";
 export default {
   name: 'App',
   components: {
-
+    Navigation
   }
 }
 </script>
