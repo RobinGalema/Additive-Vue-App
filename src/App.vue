@@ -2,7 +2,7 @@
   <router-view>
 
   </router-view>
-  <Navigation />
+  <Navigation :notification="91" />
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
 }
 </script>
 <style>
-
+@import url("https://use.typekit.net/cfk8vri.css");
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

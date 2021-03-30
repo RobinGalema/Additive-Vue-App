@@ -1,27 +1,37 @@
 <template>
   <div class="bottomnavigation">
     <nav>
-      <a class="tab active" href="#">
+      <router-link :class="[$route.name == 'Home' ? 'active' : '', 'tab']" to="/">
         <img src="@/assets/icons/icon-home_128x128.png"/>
-      </a>
-      <a class="tab" href="#">
+      </router-link>
+      <router-link :class="[$route.name == 'Machines' ? 'active' : '', 'tab']" to="/machines">
         <img src="@/assets/icons/icon-printer_128x128.png"/>
-      </a>
-      <a class="tab" href="#">
+      </router-link>
+      <router-link :class="[$route.name == 'Planner' ? 'active' : '', 'tab']" to="/planner">
         <img src="@/assets/icons/icon-calendar_128x128.png"/>
-      </a>
-      <a class="tab" href="#">
+      </router-link>
+      <router-link :class="[$route.name == 'History' ? 'active' : '', 'tab']" to="/history">
         <img src="@/assets/icons/icon-archive_128x128.png"/>
-      </a>
-      <a class="tab" href="#">
-        <div class="notification">
-          <p>46</p>
+      </router-link>
+      <router-link :class="[$route.name == 'Notifications' ? 'active' : '', 'tab']" to="/notifications">
+        <div v-if="notification > 0" class="notification" >
+          <p>{{notification}}</p>
         </div>
         <img src="@/assets/icons/icon-bell_128x128.png"/>
-      </a>
+      </router-link>
     </nav>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Navigation',
+  props: {
+    notification: Number,
+    currentPage: String
+  }
+}
+</script>
 
 <style scoped>
 .bottomnavigation {
