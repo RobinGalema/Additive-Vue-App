@@ -1,10 +1,9 @@
 <template>
 
-
     <div class="cardBackground">
         <div @click="show = !show" class="topRow"> <!-- als je op de topRow klikt veranderdt show naar het tegenovergestelde waarde -->
             <h4>{{cardTitle}}</h4>
-            <img :class="[show ? 'spinArrow' : '']" id="arrow" src="../../assets/icons/chevron-down.svg"><!-- als "show" true is dan krijgt de div de "spinArrow" class, zo niet, dan krijgt die geen class.-->  
+            <img :class="[show ? 'spinArrow' : '']" src="../../assets/icons/chevron-down.svg"> <!-- als "show" true is dan krijgt de div de "spinArrow" class, zo niet, dan krijgt die geen class.-->  
         </div>
 
         <transition
@@ -54,10 +53,6 @@ export default {
         el.style.display = "none";
         },
         //----- einde methodes voor de expand animatie
-        spinArrow(){
-            var element = document.getElementById("arrow");
-            element.classList.add("rood");
-        }
     },
 }
 
@@ -85,6 +80,7 @@ export default {
     .topRow > h4{
         margin-top: 12px;
         margin-bottom: 12px;
+        color: #151539;
     }
 
     .cardContent{
@@ -98,6 +94,7 @@ export default {
 
     img{
         transition: 0.4s; /*-- dit zorgt voor de animatie wanneer de arrow terugdraait */
+        color: #151539;
     }
 
     /*------- classes voor de expand animatie ----*/
