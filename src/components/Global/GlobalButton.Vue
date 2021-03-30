@@ -1,5 +1,5 @@
 <template>
-    <button @click="onClick()" class="btn {{version}}">{{ text }}</button>
+    <button @click="onClick()" :class="['btn', version]" :style="{ width: width }">{{ text }}</button>
 </template>
 
 <script>
@@ -7,7 +7,8 @@
         name: 'GlobalButton',
         props: {
             text: String,
-            version: String
+            version: String,
+            width: String
         },
         methods: {
             onClick() {
@@ -39,6 +40,8 @@
 
 .secondary {
     background: #F8F8F8;
+    border: 2px solid #151539;
+    border-radius: 5px;
     color: #151539;
 }
 

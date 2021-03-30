@@ -1,17 +1,17 @@
 <template>
-<GlobalButton text="text" version="primary" />
+<GlobalButton text="hoi" version="secondary" width="200px" />
   <router-view>
     
   </router-view>
 </template>
 
 <script>
-import  GlobalButton from './Global/GlobalButton'
+import  GlobalButton from './components/Global/GlobalButton'
 
 export default {
   name: 'App',
   components: {
-    
+    GlobalButton
   }
 }
 </script>
