@@ -6,7 +6,6 @@
 </template>
 
 <script>
-
 import Navigation from "@/components/Global/Navigation";
 export default {
   name: 'App',

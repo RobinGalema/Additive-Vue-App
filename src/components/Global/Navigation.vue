@@ -2,19 +2,22 @@
   <div class="bottomnavigation">
     <nav>
       <a class="tab active" href="#">
-        <img src="https://freepngimg.com/thumb/logo/62837-instagram-icons-photography-computer-logo-icon.png">
+        <img src="@/assets/icons/icon-home_128x128.png"/>
       </a>
       <a class="tab" href="#">
-        <img src="https://freepngimg.com/thumb/logo/62837-instagram-icons-photography-computer-logo-icon.png">
+        <img src="@/assets/icons/icon-printer_128x128.png"/>
       </a>
       <a class="tab" href="#">
-        <img src="https://freepngimg.com/thumb/logo/62837-instagram-icons-photography-computer-logo-icon.png">
+        <img src="@/assets/icons/icon-calendar_128x128.png"/>
       </a>
       <a class="tab" href="#">
-        <img src="https://freepngimg.com/thumb/logo/62837-instagram-icons-photography-computer-logo-icon.png">
+        <img src="@/assets/icons/icon-archive_128x128.png"/>
       </a>
       <a class="tab" href="#">
-        <img src="https://freepngimg.com/thumb/logo/62837-instagram-icons-photography-computer-logo-icon.png">
+        <div class="notification">
+          <p>46</p>
+        </div>
+        <img src="@/assets/icons/icon-bell_128x128.png"/>
       </a>
     </nav>
   </div>
@@ -26,10 +29,10 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-//background-color: rgb(21,21,57);
-  background-color: rgb(200,200,200);
-  padding: 10px;
+  background-color: rgb(21,21,57);
+  padding: 15px 10px;
   border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
 }
 
 .bottomnavigation nav {
@@ -42,20 +45,75 @@
 
 .tab {
   flex-basis: 20%;
+  position: relative;
 }
 
-.tab.active:after {
+.tab:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background: rgba(255,255,255,0.0);
+  height: 0px;
+  width: 0px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  border-radius: 50%;
+  transition: width .25s, height .25s, background .25s;
+  transition-timing-function: ease-in-out;
+}
+
+.tab:hover:after {
+  width: 100%;
+  padding-bottom: 100%;
+  background: rgba(255,255,255,0.15);
+}
+
+.tab.active:before {
+  position: absolute;
   content: " ";
   display: block;
-  background: #000;
+  background: #fff;
   height: 4px;
   width: 4px;
-  margin: -3px auto 0px auto;
+  right: 0px;
+  left: 0px;
+  bottom: -5px;
+  margin: 0px auto;
   border-radius: 5px;
-  margin-bottom: -29px;
 }
 
 .tab img {
-  height: 30px
+  height: 24px
+}
+
+.tab .notification {
+  position: absolute;
+  right: 10px;
+  left: 10px;
+  margin: 0px auto;
+  width: 15px;
+  font-size: 13px;
+  height: 15px;
+  transform: translate(9px, -10px);
+  border-radius: 50%;
+  border: 3px solid rgb(21,21,57);
+  background-color: #fff;
+}
+
+.tab .notification p {
+  position: absolute;
+  text-align: center;
+  right: 0px;
+  top: 1px;
+  left: 0px;
+  bottom: 0px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 11px;
+  font-weight: bold;
+  color: rgb(21,21,57);
 }
 </style>
