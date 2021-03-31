@@ -1,17 +1,17 @@
 <template>
   <h1>Home</h1>
   <a href="/machines">Go to machines</a>
-  <ToggleCard />
+  <!-- <SlideOutOverlay title="Printer 1" /> -->
 </template>
 
 <script>
 
-import ToggleCard from "../components/Global/ToggleCard.vue"
+// import SlideOutOverlay from "@/components/Global/SlideOutOverlay.vue"
 
 export default {
   name: 'Home',
   components:{
-    ToggleCard,
+    // SlideOutOverlay,
   } 
 }
 </script>
