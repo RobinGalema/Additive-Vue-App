@@ -1,5 +1,4 @@
 <template>
-<GlobalButton text="hoi" version="secondary" width="200px" />
   <router-view>
 
   </router-view>
