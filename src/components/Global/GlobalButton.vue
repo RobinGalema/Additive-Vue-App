@@ -18,7 +18,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 .btn {
     display: inline-block;
     background: #151539;

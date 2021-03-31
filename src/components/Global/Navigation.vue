@@ -90,13 +90,15 @@ export default {
   width: 4px;
   right: 0px;
   left: 0px;
-  bottom: -5px;
+  bottom: -10px;
   margin: 0px auto;
   border-radius: 5px;
 }
 
 .tab img {
-  height: 24px
+  height: 24px;
+  display: block;
+  margin: 0 auto;
 }
 
 .tab .notification {
