@@ -41,6 +41,7 @@ export default {
   right: 0px;
   background-color: rgb(21,21,57);
   padding: 15px 10px;
+  padding-bottom: 34px;
   border-radius: 10px 10px 0px 0px;
   overflow: hidden;
 }
