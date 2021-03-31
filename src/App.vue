@@ -11,7 +11,7 @@
 export default {
   name: 'App',
   components: {
-    
+    SlideOutOverlay
   }
 }
 </script>
@@ -19,7 +19,7 @@ export default {
 @import url("https://use.typekit.net/cfk8vri.css");
 
 #app {
-  font-family: open-sans, sans-serif;
+  font-family: frank-new, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
