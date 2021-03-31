@@ -1,14 +1,23 @@
 <template>
-  <div class="Blurredbackground"></div>
-  <div class="Overlay">
+  <transition name="fade-out">
+    <div class="Blurredbackground" @click="show = !show" v-if="show"></div>
+  </transition>
+  <transition name="slide-fade">
+    <div class="Overlay" v-if="show">
       <span class="CardTitle">{{ title }}</span>
-      <div class="CloseX"></div>
-  </div>
+      <div class="CloseX" @click="show = !show"></div>
+    </div>
+  </transition>
 </template>
 
 <script>
 export default {
   name: "SlideOutOverlay",
+  data: function() {
+    return {
+      show: true,
+    };
+  },
   props: {
     title: String,
   },
@@ -39,19 +48,50 @@ export default {
   box-shadow: 0px -5px 10px #0000001f;
 }
 .CardTitle {
-    font-size: 34px;
-    color: #151539;
-    text-align: left;
-    font-family: frank-new, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    margin-left: 20px;
-    line-height: 2;
+  font-size: 34px;
+  color: #151539;
+  text-align: left;
+  font-family: frank-new, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-left: 20px;
+  line-height: 2;
 }
 .CloseX {
-    height: 100px;
-    width: 100px;
-    background-image: url('~@/assets/x.svg');
-    background-size: contain;
+  height: 40px;
+  width: 40px;
+  background-image: url("~@/assets/icons/x.svg");
+  background-size: contain;
+  float: right;
+  margin: 15px;
+}
+.fade-out-enter-active {
+  animation: fade 0.5s;
+}
+.fade-out-leave-active {
+  animation: fade 0.5s reverse;
+}
+
+.slide-fade-enter-active {
+  animation: bounce-in 1s reverse;
+}
+.slide-fade-leave-active {
+  animation: bounce-in 1s;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bounce-in {
+  0% {
+    bottom: 0%;
+  }
+  100% {
+    bottom: -100%;
+  }
 }
 </style>
