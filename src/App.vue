@@ -3,15 +3,15 @@
   <router-view>
 
   </router-view>
-  <SlideOutOverlay title="Printer 1" />
+  <Navigation :notification="91" />
 </template>
 
 <script>
-
+import Navigation from "@/components/Global/Navigation";
 export default {
   name: 'App',
   components: {
-    SlideOutOverlay
+    Navigation
   }
 }
 </script>
