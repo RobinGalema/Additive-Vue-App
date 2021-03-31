@@ -1,15 +1,16 @@
 <template>
   <router-view>
-
+    <ToggleButton />
   </router-view>
 </template>
 
 <script>
+import ToggleButton from './components/Global/ToggleButton'
 
 export default {
   name: 'App',
   components: {
-
+    ToggleButton
   }
 }
 </script>
