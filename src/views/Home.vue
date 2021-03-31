@@ -1,17 +1,21 @@
 <template>
-  <h1>Home</h1>
-  <a href="/machines">Go to machines</a>
-  <!-- <SlideOutOverlay title="Printer 1" /> -->
+  <Search /><br />
+  <Select />
+  <SlideOutOverlay title="Printer 1" />
 </template>
 
 <script>
 
-// import SlideOutOverlay from "@/components/Global/SlideOutOverlay.vue"
+import Search from "@/components/Global/Search.vue"
+import Select from "@/components/Global/Select.vue"
+import SlideOutOverlay from "@/components/Global/SlideOutOverlay.vue"
 
 export default {
   name: 'Home',
   components:{
-    // SlideOutOverlay,
+    Search,
+    Select,
+    SlideOutOverlay,
   } 
 }
 </script>
