@@ -1,16 +1,17 @@
 <template>
+<GlobalButton text="hoi" version="secondary" width="200px" />
   <router-view>
+
   </router-view>
   <SlideOutOverlay title="Printer 1" />
 </template>
 
 <script>
-import SlideOutOverlay from "./components/Global/SlideOutOverlay";
 
 export default {
   name: 'App',
   components: {
-    SlideOutOverlay
+    
   }
 }
 </script>
