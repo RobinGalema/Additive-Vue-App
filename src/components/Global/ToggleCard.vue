@@ -1,5 +1,5 @@
 <template>
-
+    <!-- Component: <ToggleCard cardTitle="Title" /> ------->
     <div class="cardBackground">
         <div @click="show = !show" class="topRow"> <!-- als je op de topRow klikt veranderdt show naar het tegenovergestelde waarde -->
             <h4>{{cardTitle}}</h4>
@@ -24,11 +24,14 @@
 feather.replace();
 
 export default {
+    name: "ToggleCard",
     data(){
         return{
-            cardTitle: "Card title",
             show: false,
         }
+    },
+    props:{
+        cardTitle: String
     },
     methods:{
         //----- methodes voor de expand animatie
@@ -59,16 +62,17 @@ export default {
 </script>
 
 <style scoped>
+
     .cardBackground{
         background: #F8F8F8;
         box-shadow: 0 0 10pt #00000029;
-        width: 300px;
         border-radius: 10px;
         text-align: left;
-        padding-left: 12px;
-        padding-right: 12px;
         padding-top: 2px;
         padding-bottom: 2px;
+        width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
     }
 
     .topRow{

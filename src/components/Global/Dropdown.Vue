@@ -1,7 +1,8 @@
 <template>
+ <!-- Component:     <Dropdown dropdownTitle="Title" />    ------->
     <div class="dropdownBackground">
         <div @click="show = !show" class="topRow"> <!-- als je op de topRow klikt veranderdt show naar het tegenovergestelde waarde -->
-                <h2>Title</h2>
+                <h2>{{dropdownTitle}}</h2>
                 <img :class="[show ? 'spinArrow' : '', 'icon']" src="../../assets/icons/chevron-down.svg"><!-- als "show" true is dan krijgt de div de "spinArrow" class, zo niet, dan krijgt die geen class.-->  
         </div>
 
@@ -20,6 +21,10 @@
 
 <script>
 export default {
+    name: "Dropdown",
+    props:{
+         dropdownTitle: String
+    },
      data(){
         return{
             show: false,
@@ -56,10 +61,10 @@ export default {
 
 .dropdownBackground{
         text-align: left;
-        padding-left: 12px;
-        padding-right: 12px;
         padding-top: 2px;
         padding-bottom: 2px;
+        padding-left: 8px;
+        padding-right: 8px;
 }
  .topRow{
         display: flex;
