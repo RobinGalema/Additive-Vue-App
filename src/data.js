@@ -60,12 +60,24 @@ const SortData = (data) =>{
     return sortedData;
 }
 
-const findModule = (moduleToFind) =>{
-    return sortedData.find(o => o.moduleName === moduleToFind);
+/**
+ * Looks through an array of module types to find the object of the given module type
+ * @param {string} moduleToFind The name of the module that will be looked for
+ * @param {Array} sample The Array to search
+ * @returns {object} The object of the found module
+ */
+const findModule = (moduleToFind, sample) =>{
+    return sample.find(o => o.moduleName === moduleToFind);
 }
-
-const findProperty = (moduleName, property) => {
-    let moduleToSearch = findModule(moduleName);
+/**
+ * Looks through an array of modules to find the given module and property within the given module
+ * @param {Array} sample The array to search
+ * @param {string} moduleName The name of the module that will be looked for
+ * @param {string} property The name of the property that will be looked for
+ * @returns {object} The object containing the property
+ */
+const findProperty = (sample, moduleName, property) => {
+    let moduleToSearch = findModule(moduleName, sample);
     console.log(moduleToSearch);                                                                                // <-- DEBUG !
 
     return moduleToSearch.data.find(o => o.property === property);
@@ -75,8 +87,7 @@ let currentTimeStamp = dataJson.data[0].time;
 let data = GetTimeStampData(currentTimeStamp);
 let sortedData = SortData(data);
 
-
-let OxygenLevel = findProperty('CTM', 'ProcessGasOxygenLevel');                                                 //<-- DEBUG !
+let OxygenLevel = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel');                                                 //<-- DEBUG !
 console.log(`[${OxygenLevel.time}][${OxygenLevel.module}] ${OxygenLevel.property} = ${OxygenLevel.value}`);     //<-- DEBUG !
 
 /*
