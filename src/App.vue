@@ -1,6 +1,6 @@
 <template>
   <router-view>
-    <ToggleButton />
+
   </router-view>
   <Navigation :notification="91" />
 </template>
