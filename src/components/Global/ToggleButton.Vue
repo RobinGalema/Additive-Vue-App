@@ -1,16 +1,14 @@
 <template>
-    <label class="switch">
-    <input type="checkbox">
-    <span class="slider"></span>
+    <label class="switch" @click="onClick()">
+        <input type="checkbox">
+        <span class="slider"></span>
     </label>
+    
 </template>
 
 <script>
     export default {
         name: 'ToggleButton',
-        props: {
-            text: String,
-        },
         methods: {
             onClick() {
                 console.log('click');
