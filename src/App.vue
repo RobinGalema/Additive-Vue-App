@@ -1,16 +1,18 @@
 <template>
   <router-view>
-
+    <NotificationCard title="Machine stopped" context="Machine 1 stopped because a fatal error occurred." alert="high" />
   </router-view>
   <Navigation :notification="91" />
 </template>
 
 <script>
 import Navigation from "@/components/Global/Navigation";
+import NotificationCard from "./components/Notifications/NotificationCard";
 export default {
   name: 'App',
   components: {
     Navigation,
+    NotificationCard,
   }
 }
 </script>
