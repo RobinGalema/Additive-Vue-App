@@ -3,19 +3,23 @@
     <h1>Overview</h1>
     <img src="../assets/icons/settings.svg">
   </div>
-  <h4>{{date}}</h4>
+  <h4 class="date">{{date}}</h4>
 
   <div class="firstRow">
     <HomeScreenDiagram />
     <PlanNewJobButton text="Plan new job" version="homeScreenButton"  picture_src="../assets/logo.png"/>
   </div>
-  
+
+  <HomeScreenRunning />
+    <HomeScreenNotifications />
 
 </template>
 
 <script>
   import HomeScreenDiagram from "@/components/Homescreen/HomeScreenDiagram.vue"
   import PlanNewJobButton from "@/components/Global/GlobalButton.vue"
+  import HomeScreenRunning from "@/components/Homescreen/HomeScreenRunning.vue"
+  import HomeScreenNotifications from "@/components/Homescreen/HomeScreenNotifications.vue"
   export default {
     name: 'Home',
     data(){
@@ -25,7 +29,9 @@
     },
     components:{
       HomeScreenDiagram,
-      PlanNewJobButton
+      PlanNewJobButton,
+      HomeScreenRunning,
+      HomeScreenNotifications
     },
     methods:{
       getCurrentDate: function () {
@@ -55,11 +61,11 @@ h1{
   color: #000000;
 }
 
-h4{
+.date{
   margin-top: 0px;
   margin-left: 4px;
-  text-transform: uppercase;
   color: #BBBBBB;
+  text-transform: uppercase;
 }
 
 .firstRow{
