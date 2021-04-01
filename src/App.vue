@@ -2,7 +2,6 @@
   <router-view>
   </router-view>
   <Navigation :notification="91" />
-  <NotificationFilterTag />
 </template>
 
 <script>

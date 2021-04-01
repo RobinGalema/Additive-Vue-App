@@ -1,7 +1,7 @@
 <template>
     <div class="notificationFilterTag">
         <div class="filterTag">
-            Machine 1
+            {{title}}
         </div>
         <div class="cancelBtn">
             <img src="@/assets/icons/cancel.png" />
@@ -14,11 +14,7 @@
     export default {
         name: 'NotificationFilterTag',
         props: {
-            title: String,
-            context: String,
-            timestamp: String,
-            linkToMachine: String,
-            level: String
+            title: String
         }
     }
 </script>
