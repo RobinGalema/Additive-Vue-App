@@ -13,3 +13,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.pt-15 {
+  padding-top: 15px;
+}
+</style>
