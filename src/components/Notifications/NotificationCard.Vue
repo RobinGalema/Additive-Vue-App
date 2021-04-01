@@ -25,7 +25,8 @@
             title: String,
             context: String,
             timestamp: String,
-            linkToMachine: String
+            linkToMachine: String,
+            level: String
         }
     }
 </script>
@@ -38,6 +39,7 @@
     display: grid;
     grid-template-columns: 10% 45% 45%;
     grid-template-rows: 2fr 1fr;
+    margin-bottom: 10px;
 }
 
 .status {
