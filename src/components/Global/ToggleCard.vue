@@ -1,7 +1,7 @@
 <template>
     <!-- Component: <ToggleCard cardTitle="Title" /> ------->
     <div class="cardBackground">
-        <div @click="show = !show" class="topRow"> <!-- als je op de topRow klikt veranderdt show naar het tegenovergestelde waarde -->
+        <div class="topRow"> <!-- als je op de topRow klikt veranderdt show naar het tegenovergestelde waarde -->
             <h4>{{cardTitle}}</h4>
             <img :class="[show ? 'spinArrow' : '']" src="../../assets/icons/chevron-down.svg"> <!-- als "show" true is dan krijgt de div de "spinArrow" class, zo niet, dan krijgt die geen class.-->  
         </div>
@@ -34,28 +34,7 @@ export default {
         cardTitle: String
     },
     methods:{
-        //----- methodes voor de expand animatie
-        beforeEnter(el) {
-        el.classList.remove("collapse");
-        el.style.display = "block";
-        el.classList.add("collapsing");
-        el.style.height = `${el.scrollHeight}px`;
-        },
-        afterEnter(el) {
-        el.classList.remove("collapsing");
-        el.classList.add("collapse", "in");
-        },
-        beforeLeave(el) {
-        el.classList.add("collapsing");
-        el.classList.remove("collapse", "in");
-        el.style.height = 0;
-        },
-        afterLeave(el) {
-        el.classList.remove("collapsing");
-        el.classList.add("collapse");
-        el.style.display = "none";
-        },
-        //----- einde methodes voor de expand animatie
+        
     },
 }
 
@@ -101,20 +80,5 @@ export default {
         color: #151539;
     }
 
-    /*------- classes voor de expand animatie ----*/
-    .collapse {
-	    display: none;
-    }
-
-    .collapse.in {
-	    display: block;
-    }
-    .collapsing {
-	    position: relative;
-	    height: 0;
-	    overflow: hidden;
-	    transition: height 0.375s ease;
-    }
- /*------- einde classes voor de expand animatie ----*/
 
 </style>
