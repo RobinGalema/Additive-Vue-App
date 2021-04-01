@@ -1,5 +1,4 @@
 <template>
- <!-- Component:     <Dropdown dropdownTitle="Title" />    ------->
     <div class="dropdownBackground">
         <div @click="show = !show, onClick()" class="topRow"> <!-- als je op de topRow klikt veranderdt show naar het tegenovergestelde waarde -->
                 <h2>{{dropdownTitle}}</h2>
