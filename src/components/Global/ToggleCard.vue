@@ -100,8 +100,8 @@ export default {
         box-shadow: 0 0 10pt #00000029;
         border-radius: 10px;
         text-align: left;
-        padding-top: 2px;
-        padding-bottom: 8px;
+        padding-top: 4px;
+        padding-bottom: 4px;
         padding-left: 8px;
         padding-right: 8px;
         margin: 4px;
