@@ -34,8 +34,7 @@ export default {
         background: #F2F2F2;
         border: 1.5px solid #F2F2F2;
         border-radius: 5px;
-        padding-left: 8px;
-        padding-right: 8px;
+        padding: 8px;
         outline: none;
         width: 100%;
         margin-top: 8px;

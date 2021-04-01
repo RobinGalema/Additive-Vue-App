@@ -12,7 +12,7 @@
                 @beforeLeave="beforeLeave"
                 @afterLeave="afterLeave"> <!-- dit zorgt voor de animatie bij het uitklappen van de dropdwon -->
             <div v-show="show" class="dropdownContent">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    {{dropdownContent}} 
             </div>
         </transition>
     </div>
@@ -23,7 +23,8 @@
 export default {
     name: "Dropdown",
     props:{
-         dropdownTitle: String
+         dropdownTitle: String,
+         dropdownContent: String,
     },
      data(){
         return{
@@ -63,9 +64,9 @@ export default {
         text-align: left;
         padding-top: 2px;
         padding-bottom: 2px;
-        padding-left: 8px;
-        padding-right: 8px;
+        width: 100vw;
 }
+
  .topRow{
         display: flex;
         justify-content: space-between;
@@ -76,12 +77,15 @@ export default {
         margin-top: 12px;
         margin-bottom: 12px;
         color: #5268AA;
-
     }
 
     .spinArrow{
          transform: rotate(180deg);
          transition: 0.4s;
+    }
+
+    .dropdownContent{
+        margin-left: 2px;
     }
 
     img{
