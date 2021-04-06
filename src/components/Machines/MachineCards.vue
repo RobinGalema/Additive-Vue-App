@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MachineCard from './MachineCard'
+import MachineCard from './machinecard'
 
 export default {
   name: 'MachineCards',
