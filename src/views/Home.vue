@@ -1,20 +1,17 @@
 <template>
   <div class="topSection">
-    <h1>Overview</h1>
+      <h1>Overview</h1>
       <HomeScreenSettings title="Settings" />
-
   </div>
-  <h4 class="date">{{date}}</h4>
 
+  <h4 class="date">{{date}}</h4>
   <div class="firstRow">
-    <HomeScreenDiagram />
-    <PlanNewJobButton text="Plan new job" version="homeScreenButton"  picture_src="../assets/logo.png"/>
+      <HomeScreenDiagram />
+      <PlanNewJobButton text="Plan new job" version="homeScreenButton"  picture_src="../assets/logo.png"/>
   </div>
 
   <HomeScreenRunning />
   <HomeScreenNotifications style="margin-bottom:120px" />
-
-
 </template>
 
 <script>
@@ -23,6 +20,7 @@
   import HomeScreenRunning from "@/components/Homescreen/HomeScreenRunning.vue"
   import HomeScreenNotifications from "@/components/Homescreen/HomeScreenNotifications.vue"
   import HomeScreenSettings from "@/components/Homescreen/HomeScreenSettings.vue"
+
   export default {
     name: 'Home',
     data(){
@@ -76,7 +74,5 @@ h1{
   display: grid;
   grid-template-columns: 75% 25%;
 }
-
-
 
 </style>

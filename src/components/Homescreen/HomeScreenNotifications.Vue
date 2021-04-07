@@ -1,53 +1,21 @@
 <template>
     <div class="cardContainer">
         <ToggleCard @show-card-content="showCardContent" cardTitle="Recent Notifications" />
-        <div v-if="showTheContent">
-            <div class="notifications">
+        <div class="notifications" v-if="showTheContent" >
                 <ul>
-                    <li>
+                    <li :key="notification.id" v-for="notification in notifications" >
                         <div class="error">
                              <img src="../../assets/icons/alert-octagon.svg"> 
-                             <p>Machine 1 - stopped due to a fatal error.</p> 
+                             <p>{{notification.machine}} - {{notification.text}}</p> 
                         </div>
-                        <p class="time">14:32</p>
-                    </li>
-                    <li>
-                        <div class="error">
-                             <img src="../../assets/icons/alert-octagon.svg"> 
-                             <p>Machine 1 - stopped due to a fatal error.</p> 
-                        </div>
-                        <p class="time">14:32</p>
-                    </li>
-                    <li>
-                        <div class="error">
-                             <img src="../../assets/icons/alert-octagon.svg"> 
-                             <p>Machine 1 - stopped due to a fatal error hha haha losers.</p> 
-                        </div>
-                        <p class="time">14:32</p>
-                    </li>
-                    <li>
-                        <div class="error">
-                             <img src="../../assets/icons/alert-octagon.svg"> 
-                             <p>Machine 1 - stopped due to a fatal error.</p> 
-                        </div>
-                        <p class="time">14:32</p>
-                    </li>
-                    <li>
-                        <div class="error">
-                             <img src="../../assets/icons/alert-octagon.svg"> 
-                             <p>Machine 1 - stopped due to a fatal error.</p> 
-                        </div>
-                        <p class="time">14:32</p>
+                        <p class="time">{{notification.time}}</p>
                     </li>
                 </ul>
-                 <router-link :class="[$route.name == 'Notifications' ? 'active' : '', 'tab']" to="/notifications">
-                <a>View all</a>
-                
+                <router-link :class="[$route.name == 'Notifications' ? 'active' : '', 'tab']" to="/notifications">
+                    <a>View all</a>
                 </router-link>
-            </div>
-        </div>
-    </div>
-
+        </div> <!-- Einde div: notifications -->
+    </div> <!-- Einde div: cardContainer -->
 </template>
 
 <script>
@@ -56,7 +24,44 @@
         name: 'HomeScreenNotifications',
         data(){
             return{
-            showTheContent: true
+            showTheContent: true,
+                notifications: [
+                {
+                "id": 1,
+                "machine": "Machine 6",
+                "text": "stopped due to a fatal error",
+                "urgency": "high",
+                "time": "8:23"
+                },
+                {
+                "id": 2,
+                "machine": "Machine 2",
+                "text": "low powder level",
+                "urgency": "low",
+                "time": "11:05"
+                },
+                {
+                "id": 3,
+                "machine": "Machine 3",
+                "text": "error pre-manufacturing",
+                "urgency": "low",
+                "time": "11:48"
+                },
+                {
+                "id": 4,
+                "machine": "Machine 5",
+                "text": "stopped due to a fatal error, plate is missing",
+                "urgency": "high",
+                "time": "12:38"
+                },
+                {
+                "id": 5,
+                "machine": "Machine 5",
+                "text": "warning, the job might stop due to low oxgyen levels",
+                "urgency": "medium",
+                "time": "15:56"
+                },
+            ]
             }
         },
         components:{
@@ -65,8 +70,8 @@
         methods:{
              showCardContent(){
                 this.showTheContent = !this.showTheContent
-    }
-  }
+            }
+         }
     }
 </script>
 

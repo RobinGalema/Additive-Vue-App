@@ -8,7 +8,7 @@
       <h2>{{ title }}</h2>
         <div class="content">
             <img class="logo" src="../../assets/ai-logo.png">
-            <p>Selet your function:</p> <Select style="width:100%" /> <br>
+            <p>Selet your function:</p> <Select optieEen="Operator" optieTwee="Company Lead" optieDrie="Project Manager" style="width:100%" /> <br>
 
              <p>Out of app notifications:</p>
                  <div class="toggleButton">General:

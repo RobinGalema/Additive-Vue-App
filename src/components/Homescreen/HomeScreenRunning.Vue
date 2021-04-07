@@ -3,29 +3,11 @@
         <ToggleCard @show-card-content="showCardContent" cardTitle="Currently Running" />
         <div v-if="showTheContent">
                  <div class="scrolling-wrapper">
-                    <div class="machineKaart"><h2>QB021_NE</h2><p>Machine 1 | Core 3</p>
+                    <div :key="machine.id" v-for="machine in machines" class="machineKaart"><h2>{{machine.name}}</h2><p>{{machine.title}} | Core {{machine.core}}</p>
                         <div class="progress">
-                            <div class="progress-value" style="width:75%"></div><div class="percentage">75%</div>
+                            <div class="progress-value" style="width:75%"></div><div class="percentage">{{machine.progress}}%</div>
                         </div>
-                        <div class="tijd">4h 7m remaining</div>
-                    </div>
-                    <div class="machineKaart"><h2>QB021_NE</h2><p>Machine 1 | Core 3</p>
-                        <div class="progress">
-                            <div class="progress-value" style="width:75%"></div><div class="percentage">75%</div>
-                        </div>
-                        <div class="tijd">4h 7m remaining</div>
-                    </div>
-                    <div class="machineKaart"><h2>QB021_NE</h2><p>Machine 1 | Core 3</p>
-                        <div class="progress">
-                            <div class="progress-value" style="width:75%"></div><div class="percentage">75%</div>
-                        </div>
-                        <div class="tijd">4h 7m remaining</div>
-                    </div>
-                    <div class="machineKaart"><h2>QB021_NE</h2><p>Machine 1 | Core 3</p>
-                        <div class="progress">
-                            <div class="progress-value" style="width:75%"></div><div class="percentage">75%</div>
-                        </div>
-                        <div class="tijd">4h 7m remaining</div>
+                        <div class="tijd">{{machine.timeRemaining}} remaining</div>
                     </div>
                 </div>
                   <router-link :class="[$route.name == 'Machines' ? 'active' : '', 'tab']" to="/machines">
@@ -33,7 +15,6 @@
                   </router-link>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -42,7 +23,75 @@
         name: 'HomeScreenRunning',
         data(){
             return{
-            showTheContent: true
+            showTheContent: true,
+             machines: [
+            {
+            "id": 1,
+            "title": "Machine 6",
+            "core": 1,
+            "name": "DSAD1_SP_1_1",
+            "image": "additive-5module-view3-2304.png",
+            "error": false,
+            "progress": 95,
+            "timeRemaining": '1h 09m',
+            "state": ""
+            },
+            {
+            "id": 2,
+            "title": "Machine 2",
+            "core": 4,
+            "name": "DSAD1_SP_1_1",
+            "image": "additive-5module-view3-2304.png",
+            "error": true,
+            "progress": 91,
+            "timeRemaining": '2h 53m',
+            "state": "Error pre-manufacturing"
+            },
+            {
+            "id": 3,
+            "title": "Machine 1",
+            "core": 1,
+            "name": "VR762_LK8",
+            "image": "additive-5module-view3-2304.png",
+            "error": false,
+            "progress": 15,
+            "timeRemaining": '6d 19h 05m',
+            "state": ""
+            },
+            {
+            "id": 4,
+            "title": "Machine 3",
+            "core": 2,
+            "name": "QB021_NE_3",
+            "image": "additive-5module-view3-2304.png",
+            "error": false,
+            "progress": 69,
+            "timeRemaining": '2d 11h 03m',
+            "state": ""
+            },
+            {
+            "id": 5,
+            "title": "Machine 7",
+            "core": 2,
+            "name": "R011_IN_1_2",
+            "image": "additive-5module-view3-2304.png",
+            "error": false,
+            "progress": 47,
+            "timeRemaining": '4d 06h 24m',
+            "state": ""
+            },
+            {
+            "id": 6,
+            "title": "Machine 5",
+            "core": 1,
+            "name": "PL001_JH_3_0",
+            "image": "additive-5module-view3-2304.png",
+            "error": true,
+            "progress": 69,
+            "timeRemaining": '3d 02h 33m',
+            "state": "Error pre-manufacturing"
+            },
+        ]
             }
         },
         components:{
@@ -114,13 +163,6 @@
         color: black;
     }
 
-    /* .scrolling-wrapper, .scrolling-wrapper-flexbox {
-	    height: 80px;
-	    margin-bottom: 20px;
-	    width: 100%;
-	    -webkit-overflow-scrolling: touch;
-    } */
-
     .scrolling-wrapper::-webkit-scrollbar, .scrolling-wrapper-flexbox::-webkit-scrollbar {
 	     display: none;
     }
@@ -146,30 +188,30 @@
         }
 
 
-.percentage{
-    font-size: 12px;
-    position: absolute;
-    left: 45%;
-    color: #F8F8F8;
-}
+        .percentage{
+            font-size: 12px;
+            position: absolute;
+            left: 45%;
+            color: #F8F8F8;
+        }
 
-.tijd{
-    color: #BBBBBB;
-    font-size: 12px;
-    text-align: center;
-    padding-top: 18px;
-}
+        .tijd{
+            color: #BBBBBB;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 18px;
+        }
 
-  a{
-        color: #506ED5;
-        font-weight: bold;
-        font-size: 14px;
-        text-decoration: none;
-        display: flex;
-        justify-content: flex-end;
-        padding-top: 8px;
-        padding-bottom: 4px;
-    }
- 
+     a{
+            color: #506ED5;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 8px;
+            padding-bottom: 4px;
+        }
+    
 
 </style>
