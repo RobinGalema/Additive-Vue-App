@@ -2,18 +2,15 @@
   <router-view>
   </router-view>
   <Navigation :notification="91" />
-  <NotificationFilterTags />
 </template>
 
 <script>
 import Navigation from "@/components/Global/Navigation";
-import NotificationFilterTags from "@/components/Notifications/NotificationFilterTags";
 
 export default {
   name: 'App',
   components: {
     Navigation,
-    NotificationFilterTags,
   }
 }
 </script>

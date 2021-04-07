@@ -7,7 +7,7 @@
     <div class="notificationFilterTags">
         <NotificationFilterTag title="machine 1"/>
         <NotificationFilterTag title="machine 2"/>
-        <NotificationFilterTag title="machine 3"/>
+        <NotificationFilterTag title="machine 4"/>
     </div>
 </div>
     
