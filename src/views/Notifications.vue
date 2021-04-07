@@ -1,7 +1,7 @@
 <template>
     <div class="topSection">
         <h1>Notifications</h1>
-
+        <GlobalButton />
         <NotificationFilterTags />
     </div>
 
@@ -16,20 +16,28 @@
     <NotificationCard title="Machine stopped" context="Machine 4 stopped because a fatal error occurred" minutes="48" linkToMachine="" level="high"/>
     <NotificationCard title="Machine stopped" context="Machine 4 stopped because a fatal error occurred" minutes="114" linkToMachine="" level="high"/>
 
+    <SlideOutOverlay />
+
 </template>
 
 <script>
     import NotificationFilterTags from "@/components/Notifications/NotificationFilterTags";
     import NotificationCard from "../components/Notifications/NotificationCard";
     import Dropdown from "../components/Global/Dropdown";
+    import SlideOutOverlay from "../components/Global/SlideOutOverlay";
+    import GlobalButton from "../components/Global/GlobalButton";
+
+
 
     export default {
         name: 'Notifications',
-        
+
         components: {
             NotificationFilterTags,
             NotificationCard,
             Dropdown,
+            SlideOutOverlay,
+            GlobalButton,
             }
     }
 </script>
