@@ -25,7 +25,6 @@
     import NotificationsFilter from "../components/Notifications/NotificationsFilter";
 
     import Dropdown from "../components/Global/Dropdown";
-    import GlobalButton from "../components/Global/GlobalButton";
 
 
 
@@ -36,7 +35,6 @@
             NotificationFilterTags,
             NotificationCard,
             Dropdown,
-            GlobalButton,
             NotificationsFilter,
             }
     }
