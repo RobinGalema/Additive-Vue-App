@@ -1,6 +1,5 @@
-console.log('Hello world');
-
 import dataJson from './data/DataStreamDump.json';
+let machineData = {data: {}};
 
 /**
  * Looks for data in a data file or object with a specfic timestamp
@@ -78,7 +77,7 @@ const findModule = (moduleToFind, sample) =>{
  */
 const findProperty = (sample, moduleName, property) => {
     let moduleToSearch = findModule(moduleName, sample);
-    console.log(moduleToSearch);                                                                                // <-- DEBUG !
+    console.log(moduleToSearch);                                                                               // <-- DEBUG !
 
     return moduleToSearch.data.find(o => o.property === property);
 }
@@ -87,8 +86,23 @@ let currentTimeStamp = dataJson.data[0].time;
 let data = GetTimeStampData(currentTimeStamp);
 let sortedData = SortData(data);
 
-let OxygenLevel = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel');                                                 //<-- DEBUG !
-console.log(`[${OxygenLevel.time}][${OxygenLevel.module}] ${OxygenLevel.property} = ${OxygenLevel.value}`);     //<-- DEBUG !
+let OxygenLevel = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel');            
+let Temperature = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature');                             //<-- DEBUG !
+// console.log(`[${OxygenLevel.time}][${OxygenLevel.module}] ${OxygenLevel.property} = ${OxygenLevel.value}`);  
+// console.log(`[${Temprature.time}][${Temprature.module}] ${Temprature.property} = ${Temprature.value}`);     //<-- DEBUG !
+
+machineData.data['OxygenLevel'] = OxygenLevel.value;
+machineData.data['Temperature'] = Temperature.value;
+
+console.log(machineData);
+// tasks is your array
+dataJson.data.forEach((element,i) => {
+    setTimeout(
+        function(){
+             console.log(element);
+        }
+    , i * 1000);
+});
 
 /*
     - json bestand uitlezen, data sorteren                                              ✔
