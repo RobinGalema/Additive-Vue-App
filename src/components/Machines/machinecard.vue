@@ -1,19 +1,21 @@
 <template>
-  <div class="machinecard">
-    <div>
-      <div :class="[machine.error ? 'error' : '', 'flag']">
+  <router-link :to="{path: '/machines/' + machine.id}">
+    <div class="machinecard">
+      <div>
+        <div :class="[machine.error ? 'error' : '', 'flag']">
 
+        </div>
+        <h4>{{ machine.title }}</h4>
+        <p>Core {{ machine.core }} | {{ machine.name }}</p>
+        <img src="@/assets/printers/additive-5module-view3-2304.png">
+        <div :class="[machine.state == '' ? 'statepadding' : '', 'progressbar']">
+          <div :style="{width: machine.progress + '%'}"></div>
+          <p>{{ machine.timeRemaining }} remaining</p>
+        </div>
+        <p class="state" v-if="machine.state">{{ machine.state }}</p>
       </div>
-      <h4>{{ machine.title }}</h4>
-      <p>Core {{ machine.core }} | {{ machine.name }}</p>
-      <img src="@/assets/printers/additive-5module-view3-2304.png">
-      <div :class="[machine.state == '' ? 'statepadding' : '', 'progressbar']">
-        <div :style="{width: machine.progress + '%'}"></div>
-        <p>{{ machine.timeRemaining }} remaining</p>
-      </div>
-      <p class="state" v-if="machine.state">{{ machine.state }}</p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -26,6 +28,11 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .machinecard > div {
   margin: 5px;
   padding: 5px;
