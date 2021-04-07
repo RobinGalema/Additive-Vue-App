@@ -122,7 +122,7 @@ h2 {
 .checkboxGrid {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-row-gap: 20px;
+    grid-row-gap: 30px;
     margin-bottom: 32px;
 }
 
@@ -144,16 +144,11 @@ h2 {
 }
 
 .filterItem {
-  display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  height: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .filterItem input:checked ~ .checkmark.blue {
