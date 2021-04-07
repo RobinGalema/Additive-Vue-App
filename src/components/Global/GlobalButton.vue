@@ -60,6 +60,7 @@ img{
     color: #ffffff;
     font-weight: bold;
     background-color: #506ED5;
+    margin-right: 0;
 }
 
 .homeScreenButton img{ /* icon is alleen zichtbaar wanneer de homeScreenButton class actief is */
