@@ -14,7 +14,8 @@
     export default {
         name: 'NotificationFilterTag',
         props: {
-            title: String
+            title: String,
+            colorClass: String
         }
     }
 </script>
@@ -23,7 +24,7 @@
 <style scoped>
     .notificationFilterTag {
         height: 20px;
-        background: #FCC517;
+        background: #fcc517;
         border-radius: 20px;
         padding: 4px 10px;
         font-size: 10pt;
@@ -44,4 +45,26 @@
         height: 100%;
         float: right;
     }
+
+    .green {
+        background-color: #4edb90;
+    }
+
+    .blue {
+        background-color: #1ea7fd;
+    }
+
+    .red {
+        background-color: #eb6060;
+    }
+
+    .orange {
+        background-color: #ff5717;
+    }
+
+    .yellow {
+        background-color: #fcc517;
+    }
+
+    
 </style>
