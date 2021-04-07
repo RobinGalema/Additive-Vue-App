@@ -14,7 +14,7 @@ export default {
 <style scoped>
 #input_container {
   position: relative;
-  width: 200px;
+  width: 140px;
   padding: 5px;
 }
 #input {
