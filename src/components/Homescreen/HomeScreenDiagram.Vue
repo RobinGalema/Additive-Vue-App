@@ -144,6 +144,7 @@ export default{
         justify-content: center;
         align-items: center;
         margin-right: -2px;
+        margin-left: -8px;
     }
 
     .jobs{
