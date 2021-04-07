@@ -74,7 +74,7 @@ h1{
 
 .firstRow{
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 75% 25%;
 }
 
 
