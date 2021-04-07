@@ -1,10 +1,29 @@
 # Additive-vue-app
+
+![Additive-vue-app design](readme-header.jpg)
+
 ### Version 1.2.0
 
 Additive-vue-app is an application developed for the company [Additive Industries](https://www.additiveindustries.com/) (Eindhoven, The Netherlands) to remotely monitor the status of their printers.
 
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+    * [Running the application](#running-the-application)
+    * [Build for production](#build-for-production)
+    * [Add route](#add-route)
+    * [Components](#components)
+        + [Component overview](#component-overview)
+        + [Create component](#create-component)
+        + [Add component](#add-component)
+- [Developers](#developers)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Requirements
-* [NodeJs](https://nodejs.org/en/) - 15.13.0
+* [NodeJs](https://nodejs.org/en/) - v14.15.5
 
 ## Installation
 
@@ -37,7 +56,7 @@ npm run serve
 ```
 
 ### Build for production
-Compiling and minifing all files for production. This command outputs your application to a new folder in the root of the project called `dist`.
+Compiling and minifying all files for production. This command outputs your application to a new folder in the root of the project called `dist`.
 **Note: If you run this command all content in the dist folder will be overwritten**
 
 ```
@@ -55,12 +74,17 @@ In the array called `routes`, add a new item like:
 ```javascript
 {
     path: '[URL OF CHOICE]',
-    name: '[NAME]',
-    component: [NAME OF THE VIEW COMPONENT]
+        name: '[NAME]',
+        component: [NAME OF THE VIEW COMPONENT]
 }
 ```
 
 ### Components
+#### Component overview
+Below you can find an overview of all (current) components in the application with their corresponding names. All component-files can be found in the folder `src/components`.
+
+![component overview](readme-vuecomponents.jpg)
+
 #### Create component
 Go to the folder `src/compontents`. If the component you are making will be a global component that can be used everywhere place it in the subfolder `Global`. Else go to or create a folder with the name of the page you want to make the component for. Once you are in the right folder create a new file called `[NAME OF YOUR COMPONENT].vue`, and add the following content:
 ```vue
@@ -86,16 +110,16 @@ To add a component go to a specific view or to the `App.vue` file in the root of
 ```html
 import [NAME_OF_YOUR_COMPONENT] from "@/components/[PATH_TO_YOUR_COMPONENT]";
 ```
-Once you've imported the component you can define it in the export default. You can do this by adding a new item called `components`. In this item you can list all of your components you want to use in this view. Once you've done that, your `export default` should look simular to the example below.
+Once you've imported the component you can define it in the export default. You can do this by adding a new item called `components`. In this item you can list all of your components you want to use in this view. Once you've done that, your `export default` should look similar to the example below.
 ```javascript
 export default {
-  name: 'App',
-  components: {
-    [NAME_OF_YOUR_COMPONENT],
-  }
+    name: 'App',
+    components: {
+        [NAME_OF_YOUR_COMPONENT],
+    }
 }
 ```
-The next step is to use the component in your page. You can do this by adding a new element with the name of your component to your `<template>` element. It should look simular to:
+The next step is to use the component in your page. You can do this by adding a new element with the name of your component to your `<template>` element. It should look similar to:
 
 ```html
 <template>
