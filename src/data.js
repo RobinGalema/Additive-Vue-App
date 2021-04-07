@@ -80,15 +80,6 @@ const findProperty = (sample, moduleName, property) => {
     return moduleToSearch.data.find(o => o.property === property);
 }
 
-let currentTimeStamp = dataJson.data[0].time;
-let data = GetTimeStampData(currentTimeStamp);
-let sortedData = SortData(data);
-
-                           //<-- DEBUG !
-// console.log(`[${OxygenLevel.time}][${OxygenLevel.module}] ${OxygenLevel.property} = ${OxygenLevel.value}`);  
-// console.log(`[${Temprature.time}][${Temprature.module}] ${Temprature.property} = ${Temprature.value}`);     //<-- DEBUG !
-
-
 
 console.log(machineData);
 
@@ -130,9 +121,11 @@ const LoopTime = (totalTime) =>{
 }
 
 const UpdateData = () =>{
-    let currentData = GetTimeStampData(currentTime);
-    let currentSortedData = SortData(currentData);
+    let sortedData = SortData(GetTimeStampData(currentTime));
 
-    machineData.data['OxygenLevel'] = findProperty(currentSortedData, 'CTM', 'ProcessGasOxygenLevel');
-    machineData.data['Temperature'] = findProperty(currentSortedData, 'AMC1', 'BuildPlateTemperature');
+    machineData.data['OxygenLevel'] = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel').value;
+    machineData.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;
+    machineData.data['RemainingPrintHeight'] = findProperty(sortedData, 'AMC1', 'RemainingPrintHeight').value;
 }
+
+LoopTime(getAllTimes());
