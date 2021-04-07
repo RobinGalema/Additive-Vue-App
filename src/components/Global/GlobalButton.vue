@@ -36,6 +36,7 @@
 
 img{
     display: none;
+    filter: invert(100%);
     
 }
 
@@ -56,8 +57,9 @@ img{
     background-color: #F8F8F8;
     box-shadow: 0 0 10pt #00000029;
     padding: 8px;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
+    background-color: #506ED5;
 }
 
 .homeScreenButton img{ /* icon is alleen zichtbaar wanneer de homeScreenButton class actief is */

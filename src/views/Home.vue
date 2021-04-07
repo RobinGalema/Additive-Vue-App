@@ -1,7 +1,8 @@
 <template>
   <div class="topSection">
     <h1>Overview</h1>
-    <img src="../assets/icons/settings.svg">
+      <HomeScreenSettings title="Settings" />
+
   </div>
   <h4 class="date">{{date}}</h4>
 
@@ -11,7 +12,8 @@
   </div>
 
   <HomeScreenRunning />
-    <HomeScreenNotifications />
+  <HomeScreenNotifications style="margin-bottom:120px" />
+
 
 </template>
 
@@ -20,6 +22,7 @@
   import PlanNewJobButton from "@/components/Global/GlobalButton.vue"
   import HomeScreenRunning from "@/components/Homescreen/HomeScreenRunning.vue"
   import HomeScreenNotifications from "@/components/Homescreen/HomeScreenNotifications.vue"
+  import HomeScreenSettings from "@/components/Homescreen/HomeScreenSettings.vue"
   export default {
     name: 'Home',
     data(){
@@ -31,7 +34,8 @@
       HomeScreenDiagram,
       PlanNewJobButton,
       HomeScreenRunning,
-      HomeScreenNotifications
+      HomeScreenNotifications,
+      HomeScreenSettings
     },
     methods:{
       getCurrentDate: function () {
@@ -72,6 +76,7 @@ h1{
   display: grid;
   grid-template-columns: 70% 30%;
 }
+
 
 
 </style>
