@@ -38,7 +38,6 @@ const SortData = (data) =>{
             moduleTypes.push(entry.module);
         }
     });
-    console.log(moduleTypes);                                                                              // <-- DEBUG !
 
     // Create and object for each module type
     moduleTypes.forEach(type => {
@@ -76,8 +75,7 @@ const findModule = (moduleToFind, sample) =>{
  * @returns {object} The object containing the property
  */
 const findProperty = (sample, moduleName, property) => {
-    let moduleToSearch = findModule(moduleName, sample);
-    console.log(moduleToSearch);                                                                               // <-- DEBUG !
+    let moduleToSearch = findModule(moduleName, sample);                                                                             // <-- DEBUG !
 
     return moduleToSearch.data.find(o => o.property === property);
 }
@@ -86,32 +84,55 @@ let currentTimeStamp = dataJson.data[0].time;
 let data = GetTimeStampData(currentTimeStamp);
 let sortedData = SortData(data);
 
-let OxygenLevel = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel');            
-let Temperature = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature');                             //<-- DEBUG !
+                           //<-- DEBUG !
 // console.log(`[${OxygenLevel.time}][${OxygenLevel.module}] ${OxygenLevel.property} = ${OxygenLevel.value}`);  
 // console.log(`[${Temprature.time}][${Temprature.module}] ${Temprature.property} = ${Temprature.value}`);     //<-- DEBUG !
 
-machineData.data['OxygenLevel'] = OxygenLevel.value;
-machineData.data['Temperature'] = Temperature.value;
+
 
 console.log(machineData);
-// tasks is your array
-dataJson.data.forEach((element,i) => {
-    setTimeout(
-        function(){
-             console.log(element);
+
+let currentTime = dataJson.data[0].time;
+let loopedTimes = [dataJson.data[0].time];
+
+const getAllTimes = () => {
+    let counter = 0;
+    let current;
+
+    dataJson.data.forEach(element => {
+        if (element.time != current){
+            current = element.time;
+            counter++
         }
-    , i * 1000);
-});
+    });
 
-/*
-    - json bestand uitlezen, data sorteren                                              ✔
-    - functie maken die data per timestamp aan elkaar koppelt                           ✔
-    - variabelen uitlezen per property voor een timestamp                               ✔
-    - fucntie maken die per seconde een nieuwe timestamp neemt
-    - per timestamp data uitlezen en in variabelen van het machine-object plaatsen
-    - data visualiseren met vue en testen data-binding
-    - testen/ bugfixes
-    - succes en semester gehaald EZ EZ EZ
+    return counter;
+}
 
-*/
+const GetNextTimeStamp = () =>{
+    for (let i = 0; i < dataJson.data.length; i++) {
+        if (dataJson.data[i].time != currentTime && !loopedTimes.includes(dataJson.data[i].time)){
+            loopedTimes.push(dataJson.data[i].time);
+            currentTime = dataJson.data[i].time;
+            return dataJson.data[i].time;
+        }        
+    }
+}
+
+const LoopTime = (totalTime) =>{
+    for (let i = 0; i < totalTime; i++) {
+        setTimeout(() => {
+            UpdateData();
+            console.log(machineData);
+            console.log(GetNextTimeStamp());
+        }, i * 1000);   
+    }
+}
+
+const UpdateData = () =>{
+    let currentData = GetTimeStampData(currentTime);
+    let currentSortedData = SortData(currentData);
+
+    machineData.data['OxygenLevel'] = findProperty(currentSortedData, 'CTM', 'ProcessGasOxygenLevel');
+    machineData.data['Temperature'] = findProperty(currentSortedData, 'AMC1', 'BuildPlateTemperature');
+}
