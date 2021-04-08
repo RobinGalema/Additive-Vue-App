@@ -141,10 +141,12 @@ const UpdateData = (dataSet) =>{
 
     dataSet.data['OxygenLevel'] = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel').value;
     dataSet.data['ChamberPressure'] = findProperty(sortedData, 'AMC1', 'ChamberPressure').value;
+    dataSet.data['MassAvailible'] = findProperty(sortedData, 'AMC1', 'TopContainerMassAvailable').value;
     dataSet.data['ChamberHumidity'] = findProperty(sortedData, 'AMC1', 'ChamberHumidity').value;
     dataSet.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;
     dataSet.data['RemainingPrintHeight'] = findProperty(sortedData, 'AMC1', 'RemainingPrintHeight').value;
 }
+
 
 export default LoopTime;
 
