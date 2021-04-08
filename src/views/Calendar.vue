@@ -41,7 +41,7 @@ h1 {
 }
 
 .AddNewJob {
-  position: absolute;
+  position: fixed;
   bottom: 90px;
   right: 15px;
   height: 70px;
