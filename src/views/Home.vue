@@ -7,7 +7,7 @@
   <h4 class="date">{{date}}</h4>
   <div class="firstRow">
       <HomeScreenDiagram />
-      <PlanNewJobButton text="Plan new job" version="homeScreenButton"  picture_src="../assets/logo.png"/>
+      <PlanNewJobButton text="Plan new job" version="homeScreenButton"  picture_src="../assets/logo.png" link="/Calendar" />
   </div>
 
   <HomeScreenRunning />
@@ -72,7 +72,10 @@ h1{
 
 .firstRow{
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 3fr 1fr;
+  grid-column-gap: 10px;
+  margin-bottom:20px;
+  width:100%;
 }
 
 </style>

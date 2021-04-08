@@ -1,5 +1,7 @@
 <template>
-    <button @click="onClick()" :class="['btn', version]" :style="{ width: width }">{{ text }} <img src="../../assets/icons/edit-3.svg" /></button>
+    <form :action="link" method="get">
+        <button @click="onClick()" type="submit" :class="['btn', version]" :style="{ width: width }">{{ text }} <img src="../../assets/icons/edit-3.svg" /></button>
+    </form>
 </template>
 
 <script>
@@ -10,6 +12,7 @@
             version: String,
             width: String,
             picture_src: String,
+            link: String,
         },
         methods: {
             onClick() {
@@ -60,7 +63,8 @@ img{
     color: #ffffff;
     font-weight: bold;
     background-color: #506ED5;
-    margin-right: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .homeScreenButton img{ /* icon is alleen zichtbaar wanneer de homeScreenButton class actief is */
