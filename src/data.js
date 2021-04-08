@@ -1,5 +1,5 @@
 import dataJson from './data/DataStreamDump.json';
-let machineData = {data: {}};
+let machineData = {data: {RemainingPrintHeight: ""}};
 
 /**
  * Looks for data in a data file or object with a specfic timestamp
@@ -81,11 +81,14 @@ const findProperty = (sample, moduleName, property) => {
 }
 
 
-console.log(machineData);
-
+// Declare variables for looping through time in the json
 let currentTime = dataJson.data[0].time;
 let loopedTimes = [dataJson.data[0].time];
 
+/**
+ * Gets the amount of seconds included in the data file
+ * @returns {number} Amount of seconds of data represented in the json
+ */
 const getAllTimes = () => {
     let counter = 0;
     let current;
@@ -100,6 +103,10 @@ const getAllTimes = () => {
     return counter;
 }
 
+/**
+ * Finds the next time string from the data
+ * @returns {string} The next time string in the data file
+ */
 const GetNextTimeStamp = () =>{
     for (let i = 0; i < dataJson.data.length; i++) {
         if (dataJson.data[i].time != currentTime && !loopedTimes.includes(dataJson.data[i].time)){
@@ -110,22 +117,38 @@ const GetNextTimeStamp = () =>{
     }
 }
 
+/**
+ * Loops through all timestamps, wait 1 second in between stamps
+ * @param {number} totalTime Total amount of timestamps to loop through
+ */
 const LoopTime = (totalTime) =>{
     for (let i = 0; i < totalTime; i++) {
         setTimeout(() => {
             UpdateData();
-            console.log(machineData);
-            console.log(GetNextTimeStamp());
+            console.log(currentTime); // DEBUG
+            console.log(machineData); // DEBUG
+            GetNextTimeStamp();
         }, i * 1000);   
     }
 }
 
+/**
+ * Updates the data object with new data from the json file
+ */
 const UpdateData = () =>{
     let sortedData = SortData(GetTimeStampData(currentTime));
 
     machineData.data['OxygenLevel'] = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel').value;
     machineData.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;
     machineData.data['RemainingPrintHeight'] = findProperty(sortedData, 'AMC1', 'RemainingPrintHeight').value;
+
+    console.log(`Remaining print height: ${machineData.data.RemainingPrintHeight}`); // DEBUG
 }
 
-LoopTime(getAllTimes());
+// Run the loop function on window load
+window.onload = function() {
+    LoopTime(getAllTimes());
+};
+
+export default machineData;
+
