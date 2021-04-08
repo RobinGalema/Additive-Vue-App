@@ -10,7 +10,7 @@ export default {
 
 <style scoped>
   input {
-    width: 100%;
+    width: 150px;
     max-width: 250px;
   }
 
