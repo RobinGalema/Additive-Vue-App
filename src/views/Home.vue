@@ -11,7 +11,7 @@
   </div>
 
   <HomeScreenRunning />
-  <HomeScreenNotifications style="margin-bottom:120px" />
+  <HomeScreenNotifications />
 </template>
 
 <script>

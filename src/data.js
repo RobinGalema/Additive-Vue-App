@@ -125,8 +125,8 @@ const LoopTime = (totalTime) =>{
     for (let i = 0; i < totalTime; i++) {
         setTimeout(() => {
             UpdateData();
-            console.log(currentTime); // DEBUG
-            console.log(machineData); // DEBUG
+            //console.log(currentTime); // DEBUG
+            //console.log(machineData); // DEBUG
             GetNextTimeStamp();
         }, i * 1000);   
     }
@@ -142,7 +142,7 @@ const UpdateData = () =>{
     machineData.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;
     machineData.data['RemainingPrintHeight'] = findProperty(sortedData, 'AMC1', 'RemainingPrintHeight').value;
 
-    console.log(`Remaining print height: ${machineData.data.RemainingPrintHeight}`); // DEBUG
+    //console.log(`Remaining print height: ${machineData.data.RemainingPrintHeight}`); // DEBUG
 }
 
 // Run the loop function on window load

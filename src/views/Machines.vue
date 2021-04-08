@@ -16,7 +16,7 @@ export default {
       machines: [
         {
           "id": 1,
-          "title": "Machine 6",
+          "title": "Machine 1",
           "core": 1,
           "name": "DSAD1_SP_1_1",
           "image": "additive-5module-view3-2304.png",
@@ -38,7 +38,7 @@ export default {
         },
         {
           "id": 3,
-          "title": "Machine 1",
+          "title": "Machine 3",
           "core": 1,
           "name": "VR762_LK8",
           "image": "additive-5module-view3-2304.png",
@@ -49,7 +49,7 @@ export default {
         },
         {
           "id": 4,
-          "title": "Machine 3",
+          "title": "Machine 4",
           "core": 2,
           "name": "QB021_NE_3",
           "image": "additive-5module-view3-2304.png",
@@ -60,7 +60,7 @@ export default {
         },
         {
           "id": 5,
-          "title": "Machine 7",
+          "title": "Machine 5",
           "core": 2,
           "name": "R011_IN_1_2",
           "image": "additive-5module-view3-2304.png",
@@ -71,7 +71,7 @@ export default {
         },
         {
           "id": 6,
-          "title": "Machine 5",
+          "title": "Machine 6",
           "core": 1,
           "name": "PL001_JH_3_0",
           "image": "additive-5module-view3-2304.png",
@@ -82,7 +82,7 @@ export default {
         },
         {
           "id": 7,
-          "title": "Machine 4",
+          "title": "Machine 7",
           "core": 3,
           "name": "NGGYU_04_1",
           "image": "additive-5module-view3-2304.png",
