@@ -41,5 +41,7 @@
 </script>
 
 <style scoped>
-
+.topSection {
+    display: unset;
+}
 </style>

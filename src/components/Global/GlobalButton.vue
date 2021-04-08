@@ -50,7 +50,7 @@ img{
 
 .secondary {
     background: #F8F8F8;
-    border: 2px solid #151539;
+    box-shadow: 0 0 4px #151539;
     border-radius: 5px;
     color: #151539;
 }
