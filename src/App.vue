@@ -2,18 +2,15 @@
   <router-view>
   </router-view>
   <Navigation :notification="91" />
-  <NotificationFilterTags />
 </template>
 
 <script>
 import Navigation from "@/components/Global/Navigation";
-import NotificationFilterTags from "@/components/Notifications/NotificationFilterTags";
 
 export default {
   name: 'App',
   components: {
-    Navigation,
-    NotificationFilterTags,
+    Navigation
   }
 }
 </script>
@@ -25,7 +22,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 /*
