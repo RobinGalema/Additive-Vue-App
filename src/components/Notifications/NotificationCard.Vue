@@ -1,8 +1,8 @@
 <template>
     <div class="notificationCard">
-        <div class="status">
+        <div :class="'status ' + level">
             <!-- <img :src="'@/assets/icons/alert-' + level + '.png'"/> -->
-            <img src="@/assets/icons/alert-high.png"/>
+            <!-- <img src="@/assets/icons/alert-high.png"/> -->
         </div>
         <div class="notification">
             <b>{{title}}</b> - {{context}}
@@ -47,16 +47,31 @@
     position:relative;
     margin-right: 10px;
     grid-row: 1/3;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.status img {
+.status.high {
+    background-image: url("../..//assets/icons/alert-high.png");
+}
+
+.status.medium {
+    background-image: url("../..//assets/icons/alert-medium.png");
+}
+
+.status.low {
+    background-image: url("../..//assets/icons/alert-low.png");
+}
+
+/* .status img {
     width:100%;
     margin: 0;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
+} */
 
 .notification {
     grid-column: 2/4;
