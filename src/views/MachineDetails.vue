@@ -63,17 +63,20 @@
     <h4>Errors (0)</h4>
     :)
   </div>
+  <MachineInfo/>
 </template>
 
 <script>
 import GlobalButton from '../components/Global/GlobalButton'
 import MachinePreview from '../components/Machines/machinepreview'
+import MachineInfo from '../components/Machines/MachineInfo'
 
 export default {
   name: 'MachineDetails',
   components: {
     MachinePreview,
-    GlobalButton
+    GlobalButton,
+    MachineInfo
   }
 }
 </script>
