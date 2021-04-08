@@ -1,5 +1,5 @@
 <template>
-    <button @click="onClick()" :class="['btn', version]" :style="{ width: width }">{{ text }}</button>
+    <button @click="onClick()" :class="['btn', version]" :style="{ width: width }">{{ text }} <img src="../../assets/icons/edit-3.svg" /></button>
 </template>
 
 <script>
@@ -8,7 +8,8 @@
         props: {
             text: String,
             version: String,
-            width: String
+            width: String,
+            picture_src: String,
         },
         methods: {
             onClick() {
@@ -33,6 +34,12 @@
     font-family: inherit;
 }
 
+img{
+    display: none;
+    filter: invert(100%);
+    
+}
+
 .primary {
     background: #151539;
     color: #ffffff;
@@ -43,6 +50,23 @@
     border: 2px solid #151539;
     border-radius: 5px;
     color: #151539;
+}
+
+.homeScreenButton{
+    border-radius: 10pt;
+    background-color: #F8F8F8;
+    box-shadow: 0 0 10pt #00000029;
+    padding: 8px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #506ED5;
+    margin-right: 0;
+}
+
+.homeScreenButton img{ /* icon is alleen zichtbaar wanneer de homeScreenButton class actief is */
+    display: block;
+    margin: 0 auto;
+    padding-top: 6px;
 }
 
 .btn:focus {
