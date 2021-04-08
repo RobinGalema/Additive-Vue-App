@@ -124,6 +124,8 @@
         overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
+        padding-left: 4px;
+
     }
 
     .scrolling-wrapper .machineKaart {
@@ -134,6 +136,7 @@
 	    display: flex;
 	    flex-wrap: nowrap;
 	    overflow-x: auto;
+
     }
 
     .scrolling-wrapper-flexbox .machineKaart {
@@ -148,6 +151,9 @@
         border-radius: 10px;
         margin-right: 12px;
         padding: 8px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        box-shadow: 0 0 5px rgb(201, 201, 201);
     }
 
     .machineKaart > h2{
@@ -163,12 +169,14 @@
         color: black;
     }
 
+
     .scrolling-wrapper::-webkit-scrollbar, .scrolling-wrapper-flexbox::-webkit-scrollbar {
 	     display: none;
     }
 
     .progress {
         background: #F8F8F8;
+        box-shadow: 0 0 3px rgb(194, 194, 194);
         justify-content: flex-start;
         border-radius: 100px;
         align-items: center;
@@ -196,7 +204,7 @@
         }
 
         .tijd{
-            color: #BBBBBB;
+            color: #979797;
             font-size: 12px;
             text-align: center;
             padding-top: 18px;
@@ -209,7 +217,7 @@
             text-decoration: none;
             display: flex;
             justify-content: flex-end;
-            padding-top: 8px;
+            padding-top: 4px;
             padding-bottom: 4px;
         }
     

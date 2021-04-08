@@ -60,7 +60,7 @@
 
 h1{
   margin: 0px;
-  color: #000000;
+  color: #151539;
 }
 
 .date{
