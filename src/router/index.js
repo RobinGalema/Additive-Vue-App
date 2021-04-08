@@ -3,6 +3,7 @@ import Home from '../views/Home'
 import Machines from '../views/Machines'
 import Calendar from '../views/Calendar'
 import History from '../views/History'
+import Notifications from '../views/Notifications'
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/History',
         name: 'History',
         component: History
+    },
+    {
+        path: '/notifications',
+        name: 'Notifications',
+        component: Notifications
     }
 ]
 

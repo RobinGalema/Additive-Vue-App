@@ -1,17 +1,17 @@
 <template>
     <div class="notificationCard">
         <div class="status">
-            <!-- <img :src="['@/assets/icons/alert-', alert, '.png']"/> -->
+            <!-- <img :src="'@/assets/icons/alert-' + level + '.png'"/> -->
             <img src="@/assets/icons/alert-high.png"/>
         </div>
         <div class="notification">
             <b>{{title}}</b> - {{context}}
         </div>
         <div class="timestamp">
-            30 min ago
+            {{minutes}} min ago
         </div>
         <div class="linkToMachine">
-            <a href="">Check machine</a>
+            <a href="{{linkToMachine}}">Check machine</a>
         </div>
     </div>
     
@@ -24,7 +24,7 @@
         props: {
             title: String,
             context: String,
-            timestamp: String,
+            minutes: String,
             linkToMachine: String,
             level: String
         }
