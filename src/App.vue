@@ -17,6 +17,10 @@ export default {
 <style>
 @import url("https://use.typekit.net/cfk8vri.css");
 
+body {
+  padding-bottom: 120px; /* preventing content being stuck below navigation at bottom of a page */
+}
+
 #app {
   font-family: frank-new, sans-serif;
   -webkit-font-smoothing: antialiased;
