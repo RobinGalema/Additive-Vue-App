@@ -61,8 +61,13 @@
   </div>
   <div class="errors box">
     <h4>Errors (0)</h4>
-    :)
   </div>
+
+  <div class="printreport">
+    <GlobalButton text="Print report" width="75%"/>
+  </div>
+
+  
 </template>
 
 <script>
@@ -114,5 +119,16 @@ table {
 .btn-small {
   font-size: 13px;
   padding: 5px 10px;
+}
+
+.errors.box {
+  margin-bottom: 30px;
+}
+
+.printreport form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>

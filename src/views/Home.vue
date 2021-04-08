@@ -13,9 +13,7 @@
   <HomeScreenRunning />
   <HomeScreenNotifications style="margin-bottom:30px" />
 
-  <div class="printreport">
-    <GlobalButton text="Print report" width="75%"/>
-  </div>
+
 </template>
 
 <script>
@@ -82,13 +80,6 @@ h1{
   grid-column-gap: 10px;
   margin-bottom:20px;
   width:100%;
-}
-
-.printreport form {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 </style>
