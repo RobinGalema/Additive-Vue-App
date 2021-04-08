@@ -40,7 +40,7 @@
             "id": 2,
             "title": "Machine 2",
             "core": 4,
-            "name": "DSAD1_SP_1_1",
+            "name": "QB021_NE_3",
             "image": "additive-5module-view3-2304.png",
             "error": true,
             "progress": 91,

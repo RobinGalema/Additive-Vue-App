@@ -28,7 +28,7 @@ export default{
     },
     data() {
     return {
-      colors: ["#506ED5","#EB6060", "#4EDB90"], //volgorde: active, queed, completed
+      colors: ["#506ED5","#151539", "#4EDB90"], //volgorde: active, queed, completed
       Active: 20,
       Queed: 30,
       Completed: 20,
@@ -172,7 +172,7 @@ export default{
     .queed{
         width: 12px;
         height: 12px;
-        background-color: #EB6060;
+        background-color: #151539;
         margin-right: 6px;
     }
 
