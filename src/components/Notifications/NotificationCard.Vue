@@ -11,7 +11,7 @@
             {{minutes}} min ago
         </div>
         <div class="linkToMachine">
-            <a href="{{linkToMachine}}">Check machine</a>
+            <a :href="'machines/' + machine">Check machine</a>
         </div>
     </div>
     
@@ -22,10 +22,10 @@
     export default {
         name: 'NotificationCard',
         props: {
+            machine: String,
             title: String,
             context: String,
             minutes: String,
-            linkToMachine: String,
             level: String
         }
     }
