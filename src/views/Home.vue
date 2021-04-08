@@ -11,7 +11,11 @@
   </div>
 
   <HomeScreenRunning />
-  <HomeScreenNotifications style="margin-bottom:120px" />
+  <HomeScreenNotifications style="margin-bottom:30px" />
+
+  <div class="printreport">
+    <GlobalButton text="Print report" width="75%"/>
+  </div>
 </template>
 
 <script>
@@ -20,6 +24,7 @@
   import HomeScreenRunning from "@/components/Homescreen/HomeScreenRunning.vue"
   import HomeScreenNotifications from "@/components/Homescreen/HomeScreenNotifications.vue"
   import HomeScreenSettings from "@/components/Homescreen/HomeScreenSettings.vue"
+  import GlobalButton from "@/components/Global/GlobalButton.vue"
 
   export default {
     name: 'Home',
@@ -33,7 +38,8 @@
       PlanNewJobButton,
       HomeScreenRunning,
       HomeScreenNotifications,
-      HomeScreenSettings
+      HomeScreenSettings,
+      GlobalButton,
     },
     methods:{
       getCurrentDate: function () {
@@ -76,6 +82,13 @@ h1{
   grid-column-gap: 10px;
   margin-bottom:20px;
   width:100%;
+}
+
+.printreport form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 </style>
