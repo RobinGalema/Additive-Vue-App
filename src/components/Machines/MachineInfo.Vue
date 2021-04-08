@@ -8,26 +8,26 @@
         </div>
         <div class="data-container">
             <div class="data">
-                <h3>Remaining Print Height:</h3>
-                <p class="data-text"> {{ values.data.RemainingPrintHeight }} </p>
+                <h3>Oxygen Level:</h3>
+                <p class="data-text"> {{ values.data.OxygenLevel }} </p>
             </div>
         </div>
         <div class="data-container">
             <div class="data">
-                <h3>Remaining Print Height:</h3>
-                <p class="data-text"> {{ values.data.RemainingPrintHeight }} </p>
+                <h3>Build Plate Temperature:</h3>
+                <p class="data-text"> {{ values.data.Temperature }} </p>
             </div>
         </div>
         <div class="data-container">
             <div class="data">
-                <h3>Remaining Print Height:</h3>
-                <p class="data-text"> {{ values.data.RemainingPrintHeight }} </p>
+                <h3>Chamber Pressure:</h3>
+                <p class="data-text"> {{ values.data.ChamberPressure }} </p>
             </div>
         </div>
         <div class="data-container">
             <div class="data">
-                <h3>Remaining Print Height:</h3>
-                <p class="data-text"> {{ values.data.RemainingPrintHeight }} </p>
+                <h3>Chamber Humidity:</h3>
+                <p class="data-text"> {{ values.data.ChamberHumidity }} </p>
             </div>
         </div>
         <div class="data-container">
@@ -49,9 +49,7 @@
             return {
                 // Setup the data object
                 values: {
-                    data: {
-                        RemainingPrintHeight: ""
-                    }
+                    data: { }
                 }
             }
         },

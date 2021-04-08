@@ -119,13 +119,14 @@ const GetNextTimeStamp = () =>{
 
 /**
  * Loops through all timestamps, wait 1 second in between stamps
+ * @param {Object} dataSet The object that will be used to update the data to each loop
  */
 const LoopTime = (dataSet) =>{
     for (let i = 0; i < getAllTimes(); i++) {
         setTimeout(() => {
             UpdateData(dataSet);
             console.log(currentTime); // DEBUG
-            console.log(machineData); // DEBUG
+            console.log(dataSet.data); // DEBUG
             GetNextTimeStamp();
         }, i * 1000);   
     }
@@ -133,15 +134,16 @@ const LoopTime = (dataSet) =>{
 
 /**
  * Updates the data object with new data from the json file
+ *  * @param {Object} dataSet The object that will be used to update the data to each loop
  */
 const UpdateData = (dataSet) =>{
     let sortedData = SortData(GetTimeStampData(currentTime));
 
     dataSet.data['OxygenLevel'] = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel').value;
+    dataSet.data['ChamberPressure'] = findProperty(sortedData, 'AMC1', 'ChamberPressure').value;
+    dataSet.data['ChamberHumidity'] = findProperty(sortedData, 'AMC1', 'ChamberHumidity').value;
     dataSet.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;
     dataSet.data['RemainingPrintHeight'] = findProperty(sortedData, 'AMC1', 'RemainingPrintHeight').value;
-
-    console.log(`Remaining print height: ${dataSet.data.RemainingPrintHeight}`); // DEBUG
 }
 
 export default LoopTime;
