@@ -1,30 +1,37 @@
 <template>
-  <router-view>
-  </router-view>
-  <SlideOutOverlay title="Printer 1" />
+  <router-view> </router-view>
+  <Navigation :notification="24" />
 </template>
 
 <script>
-import SlideOutOverlay from "./components/Global/SlideOutOverlay";
+import Navigation from "@/components/Global/Navigation";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    SlideOutOverlay
+    Navigation,
   }
-}
+};
 </script>
 <style>
 @import url("https://use.typekit.net/cfk8vri.css");
 
 #app {
-  font-family: open-sans, sans-serif;
+  font-family: frank-new, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-bottom: 80px;
 }
 
+a {
+  font-size: 14px;
+  font-family: frank-new, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  color: #506ed5;
+}
 /*
 --Frank New Regular--
 font-family: frank-new, sans-serif;
