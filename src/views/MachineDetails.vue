@@ -61,7 +61,7 @@
   </div>
 
   <div class="printreport">
-    <GlobalButton text="Print report" width="75%"/>
+    <GlobalButton text="Print report" width="100%"/>
   </div>
 
   
