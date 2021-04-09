@@ -119,14 +119,14 @@ const GetNextTimeStamp = () =>{
 
 /**
  * Loops through all timestamps, wait 1 second in between stamps
- * @param {number} totalTime Total amount of timestamps to loop through
+ * @param {Object} dataSet The object that will be used to update the data to each loop
  */
-const LoopTime = (totalTime) =>{
-    for (let i = 0; i < totalTime; i++) {
+const LoopTime = (dataSet) =>{
+    for (let i = 0; i < getAllTimes(); i++) {
         setTimeout(() => {
-            UpdateData();
+            UpdateData(dataSet);
             console.log(currentTime); // DEBUG
-            console.log(machineData); // DEBUG
+            console.log(dataSet.data); // DEBUG
             GetNextTimeStamp();
         }, i * 1000);   
     }
@@ -134,21 +134,19 @@ const LoopTime = (totalTime) =>{
 
 /**
  * Updates the data object with new data from the json file
+ *  * @param {Object} dataSet The object that will be used to update the data to each loop
  */
-const UpdateData = () =>{
+const UpdateData = (dataSet) =>{
     let sortedData = SortData(GetTimeStampData(currentTime));
 
-    machineData.data['OxygenLevel'] = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel').value;
-    machineData.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;
-    machineData.data['RemainingPrintHeight'] = findProperty(sortedData, 'AMC1', 'RemainingPrintHeight').value;
-
-    console.log(`Remaining print height: ${machineData.data.RemainingPrintHeight}`); // DEBUG
+    dataSet.data['OxygenLevel'] = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel').value;
+    dataSet.data['ChamberPressure'] = findProperty(sortedData, 'AMC1', 'ChamberPressure').value;
+    dataSet.data['MassAvailible'] = findProperty(sortedData, 'AMC1', 'TopContainerMassAvailable').value;
+    dataSet.data['ChamberHumidity'] = findProperty(sortedData, 'AMC1', 'ChamberHumidity').value;
+    dataSet.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;
+    dataSet.data['RemainingPrintHeight'] = findProperty(sortedData, 'AMC1', 'RemainingPrintHeight').value;
 }
 
-// Run the loop function on window load
-window.onload = function() {
-    LoopTime(getAllTimes());
-};
 
-export default machineData;
+export default LoopTime;
 
