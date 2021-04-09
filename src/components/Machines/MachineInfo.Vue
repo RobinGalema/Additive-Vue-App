@@ -2,8 +2,8 @@
     <div class="box machineInfoContainer">
         <div class="data-container">
             <div class="data">
-                <h5>Remaining Print Height:</h5>
-                <p class="data-text"> {{ values.data.RemainingPrintHeight }} </p>
+                <h5>Chamber Pressure:</h5>
+                <p class="data-text"> {{ values.data.ChamberPressure }} </p>
             </div>
         </div>
         <div class="data-container">
@@ -20,8 +20,8 @@
         </div>
         <div class="data-container">
             <div class="data">
-                <h5>Chamber Pressure:</h5>
-                <p class="data-text"> {{ values.data.ChamberPressure }} </p>
+                <h5>Remaining Print Height:</h5>
+                <p class="data-text"> {{ values.data.RemainingPrintHeight }} </p>
             </div>
         </div>
         <div class="data-container">
@@ -49,7 +49,7 @@
             return {
                 // Setup the data object
                 values: {
-                    data: { }
+                    data: {}
                 }
             }
         },
