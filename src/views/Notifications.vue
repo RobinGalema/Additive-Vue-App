@@ -1,4 +1,11 @@
 <template>
+  <div class="topSection">
+    <h1>Notifications</h1>
+    <NotificationsFilter />
+    <NotificationFilterTags />
+</div>
+<NotificationContainer machinename="Machine 1" />
+<NotificationContainer machinename="Machine 2" />
     <div class="topSection">
         <h1>Notifications</h1>
         <NotificationsFilter />
@@ -38,24 +45,21 @@
 </template>
 
 <script>
-    import NotificationFilterTags from "../components/Notifications/NotificationFilterTags";
-    import NotificationCard from "../components/Notifications/NotificationCard";
-    import NotificationsFilter from "../components/Notifications/NotificationsFilter";
+import NotificationContainer from "../components/Notifications/NotificationContainer";
+import NotificationFilterTags from "../components/Notifications/NotificationFilterTags";
+import NotificationsFilter from "../components/Notifications/NotificationsFilter";
 
-    import Dropdown from "../components/Global/Dropdown";
+import Dropdown from "../components/Global/Dropdown";
 
+export default {
+  name: "Notifications",
 
-
-    export default {
-        name: 'Notifications',
-
-        components: {
-            NotificationFilterTags,
-            NotificationCard,
-            Dropdown,
-            NotificationsFilter,
-            }
-    }
+  components: {
+    NotificationFilterTags,
+    NotificationContainer,
+    NotificationsFilter,
+  },
+};
 </script>
 
 <style scoped>

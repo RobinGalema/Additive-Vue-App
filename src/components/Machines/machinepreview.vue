@@ -51,6 +51,7 @@ export default {
 .machinepreview {
   width: 100%;
   position: relative;
+  margin-top: 20px;
 }
 
 .machinepreview .flow {

@@ -124,9 +124,9 @@ const GetNextTimeStamp = () =>{
 const LoopTime = (dataSet) =>{
     for (let i = 0; i < getAllTimes(); i++) {
         setTimeout(() => {
-            UpdateData(dataSet);
-            console.log(currentTime); // DEBUG
-            console.log(dataSet.data); // DEBUG
+            UpdateData();
+            //console.log(currentTime); // DEBUG
+            //console.log(machineData); // DEBUG
             GetNextTimeStamp();
         }, i * 1000);   
     }

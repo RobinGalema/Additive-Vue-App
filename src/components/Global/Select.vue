@@ -46,12 +46,13 @@ export default {
   border: none;
   border-radius: 10px;
   box-shadow: 0px 0px 10px #00000029;
+  margin-top: -5px;
 }
 .select select {
   display: inline-block;
   width: 100%;
   cursor: pointer;
-  padding: 15px 15px;
+  padding: 10px 15px;
   outline: 0;
   border: 0;
   border-radius: 10px;
@@ -61,12 +62,12 @@ export default {
   font-family: open-sans, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .selectarrow {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
   width: 30px;
   height: 30px;

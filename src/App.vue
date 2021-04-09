@@ -1,34 +1,37 @@
 <template>
-  <router-view>
-  </router-view>
-  <Navigation :notification="91" />
+  <router-view> </router-view>
+  <Navigation :notification="6" />
 </template>
 
 <script>
 import Navigation from "@/components/Global/Navigation";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navigation,
   }
-}
+};
 </script>
 <style>
 @import url("https://use.typekit.net/cfk8vri.css");
-
-body {
-  padding-bottom: 120px; /* preventing content being stuck below navigation at bottom of a page */
-}
 
 #app {
   font-family: frank-new, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  padding-bottom: 70px;
+  padding-bottom: 80px;
 }
 
+a {
+  font-size: 14px;
+  font-family: frank-new, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  color: #506ed5;
+}
 /*
 --Frank New Regular--
 font-family: frank-new, sans-serif;

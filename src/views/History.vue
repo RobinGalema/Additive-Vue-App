@@ -4,6 +4,9 @@
     <Search class="SearchBar" />
     <DatePicker class="DatePicker" />
   </div>
+  <HistoryContainer machinename="Machine 1" />
+  <HistoryContainer machinename="Machine 2" />
+
   <Dropdown
     @show-dropdown-content="showDropdownContent"
     dropdownTitle="Machine 1"
@@ -75,27 +78,15 @@
 <script>
 import Search from "@/components/Global/Search";
 import DatePicker from "@/components/Global/DatePicker";
-import Dropdown from "@/components/Global/Dropdown";
-import HistoryCard from "@/components/History/HistoryCard";
+import HistoryContainer from "@/components/History/HistoryContainer";
 
 export default {
   name: "History",
-  data() {
-    return {
-      showContent: true, // de content van de dropdown is nog leeg
-    };
-  },
   components: {
     Search,
     DatePicker,
-    Dropdown,
-    HistoryCard,
-  },
-  methods: {
-    showDropdownContent() {
-      this.showContent = !this.showContent; //functie die de content van de dropdown laat zien en verbergt
-    },
-  },
+    HistoryContainer,
+  }
 };
 </script>
 

@@ -11,7 +11,7 @@
          </div>
          <div class="legenda">
              <div class="kleur"><div class="active"></div> <p>Active</p></div>
-             <div class="kleur"> <div class="queed"></div> <p>Queed</p></div>
+             <div class="kleur"> <div class="queed"></div> <p>Queued</p></div>
              <div class="kleur"><div class="completed"></div> <p>Completed</p></div>
          </div>
     </div>
@@ -29,9 +29,6 @@ export default{
     data() {
     return {
       colors: ["#506ED5","#151539", "#4EDB90"], //volgorde: active, queed, completed
-      Active: 20,
-      Queed: 30,
-      Completed: 20,
       jobsTotaal: 0,
       donutData: [9, 4, 6], //volgorde: active, queed, completed
       cx: 80,

@@ -29,7 +29,8 @@
     color: #ffffff;
     border: none;
     padding: 10px 20px;
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
@@ -49,8 +50,8 @@ img{
 }
 
 .secondary {
-    background: #F8F8F8;
-    box-shadow: 0 0 4px #151539;
+    background: #fff;
+    box-shadow: 0px 0px 10px #00000029;
     border-radius: 5px;
     color: #151539;
 }
