@@ -1,6 +1,6 @@
 <template>
   <router-view> </router-view>
-  <Navigation :notification="6" />
+  <Navigation :notification="24" />
 </template>
 
 <script>

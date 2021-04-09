@@ -124,9 +124,9 @@ const GetNextTimeStamp = () =>{
 const LoopTime = (dataSet) =>{
     for (let i = 0; i < getAllTimes(); i++) {
         setTimeout(() => {
-            UpdateData();
+            UpdateData(dataSet);
             //console.log(currentTime); // DEBUG
-            //console.log(machineData); // DEBUG
+            //console.log(dataSet.data); // DEBUG
             GetNextTimeStamp();
         }, i * 1000);   
     }
@@ -139,8 +139,8 @@ const LoopTime = (dataSet) =>{
 const UpdateData = (dataSet) =>{
     let sortedData = SortData(GetTimeStampData(currentTime));
 
-    dataSet.data['OxygenLevel'] = findProperty(sortedData, 'CTM', 'ProcessGasOxygenLevel').value;
-    dataSet.data['ChamberPressure'] = findProperty(sortedData, 'AMC1', 'ChamberPressure').value;
+    dataSet.data['OxygenLevel'] = Math.floor(Math.random() * (50 - 40) + 40);
+    dataSet.data['ChamberPressure'] = (Math.random() * (10 - 5) + 5).toFixed(5);
     dataSet.data['MassAvailible'] = findProperty(sortedData, 'AMC1', 'TopContainerMassAvailable').value;
     dataSet.data['ChamberHumidity'] = findProperty(sortedData, 'AMC1', 'ChamberHumidity').value;
     dataSet.data['Temperature'] = findProperty(sortedData, 'AMC1', 'BuildPlateTemperature').value;

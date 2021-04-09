@@ -39,7 +39,8 @@
         <p>Priority:</p><Select optieEen="Select Priority" optieTwee="Select Priority" optieDrie="Select Priority" style="width:100%" />
         <p>Printer:</p><Select optieEen="Select Printer" optieTwee="Select Printer" optieDrie="Select Printer" style="width:100%" />
         <RichInput textareaTitle="Title" textareaPlaceholder="Placeholder" />
-        <GlobalButton :version="'secondary'" :text="'Quit'" :width="'45%'" style="margin-right:10%;margin-top:8%;" @click="show = !show"/>
+        <GlobalButton :version="'secondary'" :text="'Quit'" :width="'45%'" @click="show = !show"/>
+        <div style="display: inline-table;width: 10%;"></div>
         <GlobalButton :version="'primary'" :text="'Add Job'" :width="'45%'" @click="show = !show"/>
       </div>
     </div>
@@ -142,7 +143,7 @@ h1 {
 .Blurredbackground {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
@@ -152,7 +153,7 @@ h1 {
 .Overlay {
   height: 700px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 999;

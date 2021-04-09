@@ -23,6 +23,11 @@
 </script>
 
 <style scoped>
+form {
+    margin: 0!important;
+    display: contents;
+}
+
 .btn {
     display: inline-block;
     background: #151539;
@@ -85,5 +90,10 @@ img{
 .btn-block {
     display: block;
     width: 100%;
+}
+
+.btn-small {
+  font-size: 13px;
+  padding: 5px 10px;
 }
 </style>

@@ -6,25 +6,28 @@
     />
     <div v-if="showContent">
       <NotificationCard
-        title="Machine stopped"
-        context="Machine 1 stopped because a fatal error occurred"
+        machine="1"
+        title="Fatal Error"
+        context="Stopped because a fatal error occurred!"
         minutes="20"
         linkToMachine=""
         level="high"
       />
       <NotificationCard
-        title="Machine stopped"
-        context="Machine 1 stopped because a fatal error occurred"
-        minutes="20"
+        machine="1"
+        title="Low powder level"
+        context="Machine 1's powder supply is almost empty."
+        minutes="25"
         linkToMachine=""
-        level="high"
+        level="medium"
       />
       <NotificationCard
-        title="Machine stopped"
-        context="Machine 1 stopped because a fatal error occurred"
-        minutes="20"
+        machine="1"
+        title="Check Powder Suppply"
+        context="The powder basin is halfway empty."
+        minutes="30"
         linkToMachine=""
-        level="high"
+        level="low"
       />
     </div>
   </div>
