@@ -31,6 +31,45 @@
     <HistoryCard corename="VR762_LK_2" amcorenumber="2" status="Waiting" client="Name" starttime="23/3 - 13:27" endtime="25/3 - 18:00" duration="54h" />
     <HistoryCard corename="VR762_LK_3" amcorenumber="3" status="Waiting" client="Name" starttime="23/3 - 13:27" endtime="25/3 - 18:00" duration="54h" />
   </div>
+
+  <Dropdown
+    @show-dropdown-content="showDropdownContent"
+    dropdownTitle="Machine 4"
+  />
+  <div v-if="showContent">
+  </div>
+
+  <Dropdown
+    @show-dropdown-content="showDropdownContent"
+    dropdownTitle="Machine 5"
+  />
+  <div v-if="showContent">
+    <HistoryCard corename="VR762_LK_1" amcorenumber="1" status="Waiting" client="Name" starttime="23/3 - 13:27" endtime="25/3 - 18:00" duration="54h" />
+    <HistoryCard corename="VR762_LK_3" amcorenumber="3" status="Waiting" client="Name" starttime="23/3 - 13:27" endtime="25/3 - 18:00" duration="54h" />
+  </div>
+
+  <Dropdown
+    @show-dropdown-content="showDropdownContent"
+    dropdownTitle="Machine 6"
+  />
+  <div v-if="showContent">
+    <HistoryCard corename="VR762_LK_3" amcorenumber="3" status="Waiting" client="Name" starttime="23/3 - 13:27" endtime="25/3 - 18:00" duration="54h" />
+  </div>
+
+  <Dropdown
+    @show-dropdown-content="showDropdownContent"
+    dropdownTitle="Machine 7"
+  />
+  <div v-if="showContent">
+    <HistoryCard corename="VR762_LK_1" amcorenumber="1" status="Waiting" client="Name" starttime="23/3 - 13:27" endtime="25/3 - 18:00" duration="54h" />
+  </div>
+
+  <Dropdown
+    @show-dropdown-content="showDropdownContent"
+    dropdownTitle="Machine 8"
+  />
+  <div v-if="showContent">
+  </div>
 </template>
 
 <script>

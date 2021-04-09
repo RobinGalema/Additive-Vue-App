@@ -36,9 +36,12 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin: revert;
+}
 
 .AddNewJob {
-  position: absolute;
+  position: fixed;
   bottom: 90px;
   right: 15px;
   height: 70px;

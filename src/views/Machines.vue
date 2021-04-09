@@ -2,7 +2,7 @@
   <h1>Machines</h1>
   <MachineCards :machines="machines" />
 </template>
-
+dd
 <script>
 import MachineCards from '../components/Machines/MachineCards'
 

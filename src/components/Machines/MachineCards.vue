@@ -8,7 +8,7 @@
     <MachineCard :machine="machine"/>
   </div>
 </template>
-
+dd
 <script>
 import MachineCard from './machinecard'
 

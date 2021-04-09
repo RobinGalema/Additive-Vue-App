@@ -3,12 +3,12 @@
         <ToggleCard @show-card-content="showCardContent" cardTitle="Currently Running" />
         <div v-if="showTheContent">
                  <div class="scrolling-wrapper">
-                    <div :key="machine.id" v-for="machine in machines" class="machineKaart"><h2>{{machine.name}}</h2><p>{{machine.title}} | Core {{machine.core}}</p>
+                    <a :key="machine.id" v-for="machine in machines" class="machineKaart" :href="'machines/' + machine.id"><h2>{{machine.name}}</h2><p>{{machine.title}} | Core {{machine.core}}</p>
                         <div class="progress">
                             <div class="progress-value" style="width:75%"></div><div class="percentage">{{machine.progress}}%</div>
                         </div>
                         <div class="tijd">{{machine.timeRemaining}} remaining</div>
-                    </div>
+                    </a>
                 </div>
                   <router-link :class="[$route.name == 'Machines' ? 'active' : '', 'tab']" to="/machines">
                     <a>View all</a>

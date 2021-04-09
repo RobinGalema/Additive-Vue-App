@@ -3,28 +3,25 @@
   <MachinePreview />
   <div class="currentjob box">
     <h4>Current job</h4>
-    <table>
-      <tr>
-        <td>Name</td>
-        <td>QB021_NE_3</td>
-      </tr>
-      <tr>
-        <td>Status</td>
-        <td>Waiting</td>
-      </tr>
-      <tr>
-        <td>AM Core</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>Job started on</td>
-        <td>23/03/2021 13:27</td>
-      </tr>
-      <tr>
-        <td>Estimated manufacturing finish</td>
-        <td>25/03/2021 18:00</td>
-      </tr>
-    </table>
+    <div class="currentjobGrid">
+        <div class="itemTitle">Name</div>
+        <div class="itemData">QB021_NE_3</div>
+
+        <div class="itemTitle">Status</div>
+        <div class="itemData">Waiting</div>
+
+        <div class="itemTitle">Status</div>
+        <div class="itemData">Waiting</div>
+
+        <div class="itemTitle">AM Core</div>
+        <div class="itemData">3</div>
+        
+        <div class="itemTitle">Job started on</div>
+        <div class="itemData">23/03/2021 13:27</div>
+
+        <div class="itemTitle">Estimated manufacturing finish</div>
+        <div class="itemData">25/03/2021 18:00</div>
+    </div>
   </div>
   <div class="jobs box">
     <h4>Jobs</h4>
@@ -61,8 +58,13 @@
   </div>
   <div class="errors box">
     <h4>Errors (0)</h4>
-    :)
   </div>
+
+  <div class="printreport">
+    <GlobalButton text="Print report" width="100%"/>
+  </div>
+
+  
   <MachineInfo/>
 </template>
 
@@ -117,5 +119,31 @@ table {
 .btn-small {
   font-size: 13px;
   padding: 5px 10px;
+}
+
+.errors.box {
+  margin-bottom: 30px;
+}
+
+.printreport form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentjobGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  font-size: 13px;
+  grid-row-gap: 5px;
+}
+
+.itemTitle {
+  color: #BBBBBB;
+}
+
+.item {
+  margin-bottom: 5px;
 }
 </style>

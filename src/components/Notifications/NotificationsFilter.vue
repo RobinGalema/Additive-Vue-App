@@ -78,9 +78,11 @@
                     <span class="checkmark primary"></span>
                 </label>
             </div>
-
-            <GlobalButton @click="show = !show" style="width:49%; margin:0 5px 0 0;" text="Quit" version="secondary"/>  
-            <GlobalButton @click="show = !show" style="width:49%; margin:0;" text="Apply" version="primary"/>
+            <div class="filterOptions">
+              <GlobalButton @click="show = !show" width="100%" text="Quit" version="secondary"/>  
+              <GlobalButton @click="show = !show" width="100%" text="Apply" version="primary"/>
+            </div>
+            
         </div>
     </transition>
 </template>
@@ -186,6 +188,16 @@ h2 {
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+}
+
+.filterOptions{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.filterOptions form {
+  display: flex;
+  align-items: center;
 }
 
 </style>

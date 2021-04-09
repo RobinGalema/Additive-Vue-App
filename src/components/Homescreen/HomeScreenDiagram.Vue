@@ -126,7 +126,6 @@ export default{
         border-radius: 10pt;
         background-color: #F8F8F8;
         box-shadow: 0 0 10pt #00000029;
-        margin: 5px;
         padding-top: 8px;
         padding-bottom: 8px;
         display: flex;
