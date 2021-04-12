@@ -11,7 +11,7 @@
             {{minutes}} min ago
         </div>
         <div class="linkToMachine">
-            <a :href="'machines/' + machine">Check machine</a>
+          <router-link :to="{path: '/machines/' + machine}">Check machine</router-link>
         </div>
     </div>
     

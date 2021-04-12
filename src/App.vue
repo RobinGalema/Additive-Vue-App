@@ -15,7 +15,7 @@ export default {
     if (Notification.permission == 'granted') {
       const reg = await navigator.serviceWorker.getRegistration();
       var options = {
-        body: 'Machine 1 stopped because a fatal error occured',
+        body: 'Machine ' + (Math.floor(Math.random() * 7) + 1) + ' stopped because a fatal error occured',
         icon: '/img/additive-favicon-512x512.png',
         image: '/img/notificationimg_additive7.jpg',
         badge: '/img/additive-white-512x512.png',
