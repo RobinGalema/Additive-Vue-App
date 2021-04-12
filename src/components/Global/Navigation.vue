@@ -7,7 +7,7 @@
       <router-link :class="[$route.name == 'Machines' ? 'active' : '', 'tab']" to="/machines">
         <img src="@/assets/icons/icon-printer_128x128.png"/>
       </router-link>
-      <router-link :class="[$route.name == 'Planner' ? 'active' : '', 'tab']" to="/calendar">
+      <router-link :class="[$route.name == 'Calendar' ? 'active' : '', 'tab']" to="/calendar">
         <img src="@/assets/icons/icon-calendar_128x128.png"/>
       </router-link>
       <router-link :class="[$route.name == 'History' ? 'active' : '', 'tab']" to="/history">

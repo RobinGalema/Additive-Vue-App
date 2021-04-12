@@ -20,8 +20,8 @@
                 <div class="toggleButton">Errors:
                     <ToggleButton/> 
                 </div>
-                <GlobalButton @click="show = !show" style="width:100%; margin:0; margin-top:64px" text="Save changes" version="primary"/>
-
+                <br/>
+                <GlobalButton @click="show = !show" width="100%" text="Save changes" version="primary"/>
         </div>
     </div>
   </transition>
@@ -64,7 +64,7 @@ export default {
 .Overlay {
   height: 700px;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 999;

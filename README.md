@@ -2,7 +2,7 @@
 
 ![Additive-vue-app design](readme-header.jpg)
 
-### Version 1.2.0
+### Version 1.4.2
 
 Additive-vue-app is an application developed for the company [Additive Industries](https://www.additiveindustries.com/) (Eindhoven, The Netherlands) to remotely monitor the status of their printers.
 

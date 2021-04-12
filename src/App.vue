@@ -10,6 +10,31 @@ export default {
   name: "App",
   components: {
     Navigation,
+  },
+  mounted: async function () {
+    if (Notification.permission == 'granted') {
+      const reg = await navigator.serviceWorker.getRegistration();
+      var options = {
+        body: 'Machine ' + (Math.floor(Math.random() * 7) + 1) + ' stopped because a fatal error occured',
+        icon: '/img/additive-favicon-512x512.png',
+        image: '/img/notificationimg_additive7.jpg',
+        badge: '/img/additive-white-512x512.png',
+        vibrate: [100, 50, 100],
+        data: {
+          dateOfArrival: Date.now(),
+          primaryKey: 1
+        },
+        actions: [
+          {action: 'viewall', title: 'View all'},
+          {action: 'checkmachine', title: 'Check machine'}
+        ]
+      };
+      reg.showNotification('Machine stopped', options);
+    } else {
+      Notification.requestPermission(function(status) {
+        console.log('Notification permission status:', status);
+      });
+    }
   }
 };
 </script>
